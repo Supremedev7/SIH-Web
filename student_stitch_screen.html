@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student PWA - Home Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#f0eded",
+                        "primary-fixed": "#d6e3ff",
+                        "error-red": "#ba1a1a",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary-fixed": "#a0f0f0",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c1b",
+                        "secondary": "#006a6a",
+                        "secondary-fixed-dim": "#84d4d3",
+                        "on-secondary-container": "#0b6e6e",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1c1b",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "tertiary-fixed-dim": "#adc8f6",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-tertiary-fixed-variant": "#2d476e",
+                        "on-tertiary-container": "#708ab5",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#002147",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000a1d",
+                        "surface-dim": "#dcd9d8",
+                        "on-error-container": "#93000a",
+                        "outline": "#74777f",
+                        "surface-tint": "#465f88",
+                        "on-primary-fixed": "#001b3d",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-container": "#9deeed",
+                        "on-surface-variant": "#44474e",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-primary-container": "#708ab5",
+                        "surface-variant": "#e4e2e1",
+                        "on-tertiary-fixed": "#001b3c",
+                        "primary": "#000a1e",
+                        "oxford-navy": "#002147",
+                        "on-tertiary": "#ffffff",
+                        "growth-teal": "#006a6a",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-container": "#002146",
+                        "on-secondary-fixed": "#002020",
+                        "inverse-primary": "#aec7f6",
+                        "inverse-surface": "#303030",
+                        "surface-container-high": "#eae7e7",
+                        "background": "#fcf9f8",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-xs": "4px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter-mobile": "16px",
+                        "gutter-desktop": "24px",
+                        "margin-desktop": "32px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-tap-highlight-color: transparent;
+        }
+        .feed-container {
+            padding-top: 64px; /* Space for TopAppBar */
+            padding-bottom: 80px; /* Space for BottomNavBar */
+        }
+        
+        /* Subtle interaction depth */
+        .card-interactive {
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+        }
+        .card-interactive:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 4px rgba(0, 33, 71, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 flex justify-between items-center px-margin-mobile h-14 w-full z-50 bg-surface border-b border-outline-variant text-primary font-headline-md text-headline-md">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low transition-colors duration-200 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+<span class="text-headline-md font-headline-md text-oxford-navy font-bold flex-1 text-center truncate">Student Portal</span>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low transition-colors duration-200 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="feed-container px-margin-mobile flex-1 overflow-y-auto w-full max-w-[1200px] mx-auto md:px-gutter-desktop grid grid-cols-4 md:grid-cols-12 gap-gutter-mobile md:gap-gutter-desktop">
+<div class="col-span-4 md:col-span-8 md:col-start-3 flex flex-col gap-stack-lg py-stack-md">
+<!-- Section: Internships -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-oxford-navy">Internships</h2>
+<a class="font-label-md text-label-md text-growth-teal uppercase" href="#">View All</a>
+</div>
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md flex flex-col gap-stack-md card-interactive relative">
+<div class="absolute top-4 right-4 bg-primary-fixed/30 text-oxford-navy font-label-md text-label-md px-2 py-1 rounded-lg">95% Match</div>
+<div class="flex items-start gap-stack-md">
+<img class="w-12 h-12 rounded bg-surface-container object-cover border border-outline-variant" data-alt="A modern corporate logo for a tech company, stylized 'TechCorp', clean lines, minimalist design, set against a pristine white background with high key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG4Ijlh-IY25iaTUR9psA8Upq-ibvTZMLx-K0468cHGp52MvtqxHqK4ZcykdDCiaM9TAYhGFp75e2Z-rXYXTqaA6PvjEtcBrViyVmW2Mk-5o3TFe599ndzLqdT_pMGUXfPKPtSiYHmCABi0Z99IPDFoE-ezj17NSdH2Bae1sbnKslwDKYK1ASUk_i4x-QYyczvdHJhNVySr8J2kWEt9l2S4VJwlmckB0pQYYSNsYMV8mUaJUjmvvWiUdV4ctjMKx6l2JJXfyb06_4"/>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Software Engineering Intern</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">TechCorp Inc.</p>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Bangalore (Hybrid)</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant">
+<div class="flex gap-2">
+<span class="bg-surface-container-low text-on-surface font-label-md text-label-md px-2 py-1 rounded">React</span>
+<span class="bg-surface-container-low text-on-surface font-label-md text-label-md px-2 py-1 rounded">Node.js</span>
+</div>
+<button class="bg-growth-teal text-on-primary font-label-md text-label-md px-4 py-2 rounded uppercase active:scale-95 transition-transform">Apply</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md flex flex-col gap-stack-md card-interactive relative">
+<div class="absolute top-4 right-4 bg-surface-container-low text-on-surface-variant font-label-md text-label-md px-2 py-1 rounded-lg">82% Match</div>
+<div class="flex items-start gap-stack-md">
+<img class="w-12 h-12 rounded bg-surface-container object-cover border border-outline-variant" data-alt="A geometric abstract logo for a financial firm named 'GlobalFin', using strong blues and silvers, professional and sharp, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9PrrDfhwK-RqjG0BN0sn-sN4Tb23mPa_T-WrMGo2zUH-KqWQhnUuFSRr8oGMlgRvMBJQ9pIChhdNUmey_DB6cbIEBZdQOGYrJ70lbjLLYJwf5_QnWSadvQQhx-aK4TiqDlg6gzWEbV2yr-jKRzyAJiNVWTBuZRAZHBzXvcLEJSON0_imLnmQWhIyTgG0dZVljwXIgvjqz45bC1bR8Ib0abQYMfr65DwnFOIBRvJ7CEzi96iueDFs-h2bjrHKg-qMV2BaHSQmScK4"/>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Data Analyst Summer Intern</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">GlobalFin Partners</p>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Mumbai (On-site)</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant">
+<div class="flex gap-2">
+<span class="bg-surface-container-low text-on-surface font-label-md text-label-md px-2 py-1 rounded">Python</span>
+<span class="bg-surface-container-low text-on-surface font-label-md text-label-md px-2 py-1 rounded">SQL</span>
+</div>
+<button class="bg-growth-teal text-on-primary font-label-md text-label-md px-4 py-2 rounded uppercase active:scale-95 transition-transform">Apply</button>
+</div>
+</div>
+</section>
+<!-- Section: Hackathons -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-oxford-navy">Hackathons</h2>
+<a class="font-label-md text-label-md text-growth-teal uppercase" href="#">View All</a>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md flex flex-col gap-stack-md card-interactive">
+<div class="flex items-start gap-stack-md">
+<div class="w-12 h-12 rounded bg-oxford-navy flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">code</span>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Build for India 2024</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">GovTech Initiative</p>
+<div class="flex items-center gap-3 mt-2 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Oct 15-17</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>Team 2-4</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant">
+<div class="font-label-md text-label-md text-growth-teal">Registration closes in 2 days</div>
+<button class="border border-oxford-navy text-oxford-navy font-label-md text-label-md px-4 py-2 rounded uppercase active:bg-surface-container-low transition-colors">Register</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-2 bg-surface md:hidden">
+<!-- Active Item: Home -->
+<a class="flex flex-col items-center justify-center text-oxford-navy bg-primary-fixed/30 rounded-xl px-3 py-1 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<!-- Inactive Items -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md mt-1">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-md text-label-md mt-1">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md mt-1">Messaging</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md mt-1">Alerts</span>
+</a>
+</nav>
+</body></html>

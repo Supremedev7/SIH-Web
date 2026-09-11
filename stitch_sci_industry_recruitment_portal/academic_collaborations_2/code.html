@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#7dd6c3", "on-primary-container": "#a4feea", "surface": "#faf8ff", "on-tertiary-fixed": "#2a1700", "surface-tint": "#006b5c", "surface-alabaster-card": "#FFFFFF", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#ffffff", "surface-obsidian": "#090D14", "primary-fixed": "#99f3df", "inverse-surface": "#283044", "border-alabaster-strong": "#CBD5E1", "on-error": "#ffffff", "surface-variant": "#dae2fd", "match-medium": "#F59E0B", "surface-bright": "#faf8ff", "on-primary-fixed": "#00201b", "surface-container-low": "#f2f3ff", "secondary-fixed": "#d8e3fb", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "surface-container": "#eaedff", "primary-fixed-dim": "#7dd6c3", "on-primary": "#ffffff", "surface-obsidian-subtle": "#1E293B", "on-secondary": "#ffffff", "primary": "#005e51", "border-obsidian": "#1E293B", "outline-variant": "#bdc9c5", "on-tertiary-container": "#ffead5", "border-alabaster": "#E2E8F0", "teal-glow": "rgba(14, 121, 105, 0.15)", "surface-alabaster-subtle": "#F1F5F9", "tertiary": "#764900", "on-secondary-container": "#586377", "on-primary-fixed-variant": "#005045", "on-surface": "#131b2e", "surface-alabaster": "#F8FAFC", "verified-badge": "#0284C7", "on-background": "#131b2e", "border-obsidian-strong": "#334155", "secondary-container": "#d5e0f8", "match-high": "#0E7969", "outline": "#6e7a76", "tertiary-fixed": "#ffddb8", "surface-obsidian-card": "#0F172A", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#3c475a", "error": "#ba1a1a", "on-secondary-fixed": "#111c2d", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "primary-container": "#0e7969", "match-low": "#E11D48", "on-error-container": "#93000a", "on-surface-variant": "#3e4946", "secondary-fixed-dim": "#bcc7de", "surface-dim": "#d2d9f4", "tertiary-container": "#975f00", "secondary": "#545f73", "background": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gap-dashboard": "1.25rem", "sidebar-width": "16rem", "cell-pad-y": "0.625rem", "drawer-width-lg": "40rem", "kanban-col-w": "18.5rem", "drawer-width": "30rem", "gutter-table": "0.75rem", "pad-card": "1.25rem", "cell-pad-x": "1rem", "sidebar-collapsed": "4.5rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "data-mono": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "title-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "data-mono": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-md": ["0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0", "fontWeight": "400" }], "title-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-alabaster-card shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-4 flex items-center gap-3 bg-surface-alabaster-subtle"><img alt="SCI Industry Portal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1hiRhJR16GPCpOrWep9uBdv1f3d6EQkQn0S5EUVNRGrJTfMTkEa83lkdN5h6PUIBXryMBp6Qnr8aj6qLiY-vhSn299BvkgdEPklOgJMnjOd_HxIgMwaVNe3HKlhKMoO-AyNu6uSGOIRurAW3cwTaua7euirpn9jmWhZt5X3WIVtVx_bGD4glNDI8KfnvANFBKOeWUaBJEHElLWwsR7J82I5RtXRObwoMMTtv0FwGdkUiU-d9Jh-ecUyU"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">SCI Industry Portal</span><div class="flex items-center gap-1.5 mt-0.5"><span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded">Enterprise ATS</span></div></div></div><div class="px-3 pt-4 pb-2"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-3">Recruitment Operations</span></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="industry-dashboard" href="#"><span class="material-symbols-outlined text-[1.25rem]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="opportunities" href="#"><span class="material-symbols-outlined text-[1.25rem]">work</span><span class="font-label-md text-label-md">Opportunities</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="candidates-and-ats" href="#"><span class="material-symbols-outlined text-[1.25rem]">group</span><span class="font-label-md text-label-md">Candidates &amp; ATS</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-primary-container text-on-primary font-label-md" data-path="academic-collaborations" href="#"><span class="material-symbols-outlined text-[1.25rem]">school</span><span class="font-label-md text-label-md">Academic Collabs</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mentorship" href="#"><span class="material-symbols-outlined text-[1.25rem]">supervisor_account</span><span class="font-label-md text-label-md">Mentorship</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="talent-analytics" href="#"><span class="material-symbols-outlined text-[1.25rem]">query_stats</span><span class="font-label-md text-label-md">Talent Analytics</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messaging" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[1.25rem]">forum</span><span class="font-label-md text-label-md">Messages</span></div><span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full">4</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings-and-profile" href="#"><span class="material-symbols-outlined text-[1.25rem]">settings</span><span class="font-label-md text-label-md">Settings &amp; Profile</span></a></nav></div><div class="p-3"><div class="p-3 rounded-lg bg-surface-alabaster-subtle flex flex-col gap-2.5"><div class="flex items-start justify-between gap-2"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">Tata Consultancy &amp; Innovation Labs</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-verified-badge text-[0.875rem]">verified</span>Tier 1 Institutional Partner</span></div></div><div class="space-y-1"><div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Active Talent Quota</span><span class="font-data-mono text-data-mono font-medium text-on-surface">1,420 / 2,000</span></div><div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full w-[71%]"></div></div></div></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.25rem]">search</span><input class="w-full pl-10 pr-4 py-2 text-body-md font-body-md bg-surface-alabaster-card rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search applicants, skills, universities..." type="text"/></div><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors whitespace-nowrap font-label-md text-label-md"><span class="material-symbols-outlined text-primary text-[1.125rem]">auto_awesome</span><span>AI Skill Index</span></button></div><div class="flex items-center gap-4"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-match-low"></span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">help_outline</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Priya Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head of Campus Talent</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.06)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvc6Rjx-T9tI2u3p22ttpuhYiw8lusUVx9gB3UqsAKKcmF9_pfcOv9e7zrXWwnICfoJX2jR5ZQmVJCv_iP6OGHbSC7uFQ_E41eziODH3h23JbOvftRJxBJaRkjM0_EOv3SWZ9I14MP3XQN_rFj-mpEMz4o8yG13UZjZ3E6HSDZ8QhflYnxqgtWXcSM8R9KgJ0YgPGlZ1aDr5AwJqir3YhzCUP5RWa7K2ys4aBFXHFPFo6rucHSieFkSw"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header / Action Bar -->
+<div class="px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-alabaster-card shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">Institutional Synergy</span>
+<span class="text-outline text-body-sm">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-match-high text-[0.875rem]">verified</span>
+          Verified NIRF Tier-1 Network
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Academic Programs &amp; University Collaborations</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Co-create joint R&amp;D, sponsor collegiate hackathons, and fund faculty development with 450+ SCI affiliated campuses.
+      </p>
+</div>
+<div class="flex items-center gap-3 self-start md:self-auto">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[1.125rem]">download</span>
+        Export MoU Audit
+      </button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all duration-200 font-label-md text-label-md flex items-center gap-2 shadow-sm" id="openProposalModal">
+<span class="material-symbols-outlined text-[1.125rem]">add_circle</span>
+        Propose New Academic Initiative
+      </button>
+</div>
+</div>
+<div class="p-8 space-y-8">
+<!-- Quick Stats Metric Band -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-5 rounded-xl bg-surface-alabaster-card shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active MoUs &amp; Partnerships</span>
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[1.125rem]">handshake</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-display-lg text-display-lg text-on-surface">18</span>
+<span class="font-label-sm text-label-sm text-match-high bg-primary-fixed/40 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">trending_up</span>+3 this qtr
+          </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tier-1 &amp; Tier-2 Research Centers</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-alabaster-card shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sponsored Hackathons</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[1.125rem]">bolt</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-display-lg text-display-lg text-on-surface">5 Ongoing</span>
+<span class="font-label-sm text-label-sm text-match-high bg-primary-fixed/40 px-2 py-0.5 rounded">840+ Teams</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Next submission deadline: in 6 days</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-alabaster-card shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Joint R&amp;D Patents &amp; Papers</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[1.125rem]">article</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<span class="font-display-lg text-display-lg text-on-surface">12 Co-authored</span>
+<span class="font-data-mono text-data-mono text-primary font-medium">4 Pending Grant</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">IEEE, ACM &amp; Indian Patent Office</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-alabaster-card shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Allocated Grant Budget</span>
+<span class="font-data-mono text-data-mono text-on-surface font-semibold">48% Utl.</span>
+</div>
+<div class="mt-3 space-y-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">$240,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ $500,000</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 48%;"></div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2">$260,000 available for FY25 cycle</span>
+</div>
+</div>
+<!-- Active Collaborations Grid -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<h2 class="font-headline-md text-headline-md text-on-surface">Active Institutional Programs</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">4 Flagship</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sort by:</span>
+<select class="text-body-sm font-body-sm bg-surface-alabaster-card rounded-lg px-2.5 py-1 text-on-surface focus:outline-none">
+<option>Highest Engagement</option>
+<option>Recently Updated</option>
+<option>Grant Size</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Card 1 -->
+<div class="rounded-xl bg-surface-alabaster-card shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<div class="space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">Autonomous AI &amp; Robotics</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold pt-1">National Autonomous Robotics Challenge 2025</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 pt-0.5">
+<span class="material-symbols-outlined text-[1rem] text-outline">account_balance</span>
+                  IIT Delhi &amp; IIIT Hyderabad Joint Venture
+                </p>
+</div>
+<div class="h-10 w-10 rounded-xl bg-surface-container flex-shrink-0 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[1.5rem]">smart_toy</span>
+</div>
+</div>
+<!-- Visual Milestone Scrim -->
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Milestone Tracking</span>
+<span class="text-match-high font-medium">Phase 2: Project Submissions</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-match-high rounded-full" style="width: 62%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-1">
+<span>84 teams active</span>
+<span class="font-data-mono text-data-mono font-semibold text-on-surface">Grant: $45,000</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Edge Computing</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">ROS 2</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Sim2Real</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed/50 text-on-primary-fixed font-medium">+14 Intern Hires Target</span>
+</div>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<div class="flex items-center -space-x-2">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-[0.625rem] font-bold text-primary shadow-sm">IITD</div>
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-[0.625rem] font-bold text-on-secondary-container shadow-sm">IIITH</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-[0.625rem] font-medium text-on-surface-variant shadow-sm">+84</div>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container flex items-center gap-1 transition-colors">
+              Manage Submissions
+              <span class="material-symbols-outlined text-[1rem]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-xl bg-surface-alabaster-card shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tertiary"></div>
+<div class="space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Post-Quantum Cryptography</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold pt-1">Quantum Computing &amp; Cryptography Center of Excellence</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 pt-0.5">
+<span class="material-symbols-outlined text-[1rem] text-outline">account_balance</span>
+                  BITS Pilani, Goa &amp; Hyderabad Campuses
+                </p>
+</div>
+<div class="h-10 w-10 rounded-xl bg-tertiary-fixed/40 flex-shrink-0 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[1.5rem]">memory</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Program Phase</span>
+<span class="text-tertiary font-medium">Active Research Fellowship</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 80%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-1">
+<span>6 PhD Scholars Enrolled</span>
+<span class="font-data-mono text-data-mono font-semibold text-on-surface">Grant: $90,000 / yr</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Lattice Cryptography</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Qiskit Runtime</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Silicon Emulation</span>
+</div>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[1rem] text-match-high">verified</span>
+<span>Joint IP Agreement Countersigned</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container flex items-center gap-1 transition-colors">
+              Fellowship Dossier
+              <span class="material-symbols-outlined text-[1rem]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-xl bg-surface-alabaster-card shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-verified-badge"></div>
+<div class="space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">Faculty Development (FDP)</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold pt-1">Enterprise Cloud Architecture FDP</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 pt-0.5">
+<span class="material-symbols-outlined text-[1rem] text-outline">account_balance</span>
+                  NIT Karnataka (Surathkal)
+                </p>
+</div>
+<div class="h-10 w-10 rounded-xl bg-secondary-container flex-shrink-0 flex items-center justify-center text-verified-badge">
+<span class="material-symbols-outlined text-[1.5rem]">cast_for_education</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Event Logistics</span>
+<span class="text-verified-badge font-medium">Upcoming Workshop</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-verified-badge rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-1">
+<span>120 Faculty Registered</span>
+<span class="font-data-mono text-data-mono font-semibold text-on-surface">5 Days In-Person</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Kubernetes Operator</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Microservices</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Curriculum Co-Design</span>
+</div>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[1.125rem]">calendar_month</span>
+<span>Starts Nov 18, 2025</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container flex items-center gap-1 transition-colors">
+              Session Schedule
+              <span class="material-symbols-outlined text-[1rem]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="rounded-xl bg-surface-alabaster-card shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-match-high"></div>
+<div class="space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1 min-w-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold">Bio-Tech &amp; MedTech Hackathon</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold pt-1">AI in Healthcare Hackathon 2025</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 pt-0.5">
+<span class="material-symbols-outlined text-[1rem] text-outline">account_balance</span>
+                  AIIMS New Delhi &amp; IIT Kharagpur
+                </p>
+</div>
+<div class="h-10 w-10 rounded-xl bg-primary-fixed flex-shrink-0 flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[1.5rem]">biotech</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Current Status</span>
+<span class="text-match-high font-medium">Registration Open</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-match-high rounded-full" style="width: 32%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-1">
+<span>340 Student Teams</span>
+<span class="font-data-mono text-data-mono font-semibold text-on-surface">Prize Pool: $30,000</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Genomics AI</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">DICOM Vision</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Clinical Datasets</span>
+</div>
+</div>
+<div class="pt-6 mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-match-medium">
+<span class="material-symbols-outlined text-[1.125rem]">timer</span>
+<span>18 Days Remaining</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container flex items-center gap-1 transition-colors">
+              Review Submissions
+              <span class="material-symbols-outlined text-[1rem]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Pipeline & Proposal Dual Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Quick Proposal Form Container (7 Cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-alabaster-card shadow-sm p-6 space-y-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">edit_document</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Submit Joint Research or Hackathon Sponsorship Proposal</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Directly route formal academic collaboration terms to accredited dean placement cells &amp; R&amp;D advisory boards.
+          </p>
+</div>
+<form class="space-y-4" id="initiativeForm" onsubmit="event.preventDefault(); showSubmissionSuccess();">
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium">Target Academic Institutions (Multi-select)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.125rem]">school</span>
+<input class="w-full pl-9 pr-4 py-2.5 rounded-lg bg-surface-alabaster text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Search campuses by NIRF rank or name..." type="text" value="IIT Bombay, IIT Madras, IISc Bangalore"/>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended:</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer text-primary">IIT Roorkee</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer text-primary">BITS Goa</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer text-primary">IIIT Bangalore</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium">Initiative Category</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-alabaster text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option selected="">Collegiate Hackathon Sponsorship</option>
+<option>Lab Co-Sponsorship &amp; Infrastructure</option>
+<option>Curriculum Advisory &amp; Credit Course</option>
+<option>Faculty Development Program (FDP)</option>
+<option>PhD / Post-Doctoral Fellowship Grant</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium">Estimated Budget (USD)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.125rem]">attach_money</span>
+<input class="w-full pl-9 pr-4 py-2.5 rounded-lg bg-surface-alabaster text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" type="text" value="35,000"/>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium">Mentorship Commitment &amp; Lab Access</label>
+<textarea class="w-full px-3 py-2 text-body-md font-body-md bg-surface-alabaster rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Describe the number of engineering mentors, lab hardware provided, or compute credits allocated..." rows="3">Dedicated cloud GPU cluster allocation (8x H100 units for 3 months) + bi-weekly architectural guidance by Principal Staff Engineers from Tata Research Labs.</textarea>
+</div>
+<div class="flex items-center justify-between pt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pre-approve standard NDA &amp; SCI Academic IP Rider</span>
+</label>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all" type="submit">
+<span class="material-symbols-outlined text-[1.125rem]">send</span>
+              Dispatch Proposal
+            </button>
+</div>
+</form>
+<div class="hidden p-3 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-between" id="proposalSuccessToast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[1.25rem]">check_circle</span>
+<span>Proposal drafted &amp; routed to 3 campus liaison officers successfully!</span>
+</div>
+<button class="hover:opacity-75" onclick="document.getElementById('proposalSuccessToast').classList.add('hidden')">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Recent MoU Sign-offs & Legal Audit Trail (5 Cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-alabaster-card shadow-sm p-6 space-y-5">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5">
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Countersigned MoUs &amp; Legal Dossiers</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archived institutional bilateral covenants</p>
+</div>
+<span class="font-data-mono text-data-mono text-primary font-semibold">18 Validated</span>
+</div>
+<div class="space-y-3">
+<!-- Activity Item 1 -->
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle flex items-start justify-between gap-3 hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[1.125rem]">description</span>
+</div>
+<div class="space-y-0.5 min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface truncate">IIT Bombay – 3-Year Master MoU</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AI CoE &amp; Dual Internship Pathway</p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline pt-0.5">
+<span>Executed Oct 12, 2024</span>
+<span>•</span>
+<span class="text-match-high">Sign-off: Prof. K. Raman</span>
+</div>
+</div>
+</div>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Download Countersigned PDF">
+<span class="material-symbols-outlined text-[1.25rem]">download</span>
+</button>
+</div>
+<!-- Activity Item 2 -->
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle flex items-start justify-between gap-3 hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[1.125rem]">description</span>
+</div>
+<div class="space-y-0.5 min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface truncate">IISc Bangalore – Cryptography Addendum</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Research Equipment &amp; Scholar Stipends</p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline pt-0.5">
+<span>Executed Aug 29, 2024</span>
+<span>•</span>
+<span class="text-match-high">Sign-off: Registrar Office</span>
+</div>
+</div>
+</div>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Download Countersigned PDF">
+<span class="material-symbols-outlined text-[1.25rem]">download</span>
+</button>
+</div>
+<!-- Activity Item 3 -->
+<div class="p-3.5 rounded-lg bg-surface-alabaster-subtle flex items-start justify-between gap-3 hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[1.125rem]">description</span>
+</div>
+<div class="space-y-0.5 min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface truncate">IIT Kharagpur – Bioengineering Charter</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Joint IP &amp; Diagnostic Trial Labs</p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline pt-0.5">
+<span>Executed Jul 04, 2024</span>
+<span>•</span>
+<span class="text-match-high">Sign-off: Dean R&amp;D</span>
+</div>
+</div>
+</div>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Download Countersigned PDF">
+<span class="material-symbols-outlined text-[1.25rem]">download</span>
+</button>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Next automatic renewal: Jan 15, 2026</span>
+<button class="font-label-md text-label-md text-primary hover:underline">View All 18 Documents</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Proposal Modal Backing / Scrim -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4" id="initiativeModal">
+<div class="bg-surface-alabaster-card rounded-xl max-w-xl w-full p-6 shadow-xl space-y-5">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Propose New Academic Initiative</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Initiate a formal outreach charter across partner universities.</p>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface rounded-lg bg-surface-container" id="closeProposalModal">
+<span class="material-symbols-outlined text-[1.25rem]">close</span>
+</button>
+</div>
+<div class="space-y-3 text-body-sm font-body-sm text-on-surface">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Initiative Title</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-alabaster text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="e.g. 2025 Autonomous Driving Micro-Credentials" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Primary Focus Area</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-alabaster cursor-pointer">
+<input checked="" class="text-primary focus:ring-0" name="focus" type="radio"/>
+<span>Robotics &amp; AI Systems</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-alabaster cursor-pointer">
+<input class="text-primary focus:ring-0" name="focus" type="radio"/>
+<span>Clean Energy &amp; EV Tech</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-alabaster cursor-pointer">
+<input class="text-primary focus:ring-0" name="focus" type="radio"/>
+<span>High-Performance Compute</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-alabaster cursor-pointer">
+<input class="text-primary focus:ring-0" name="focus" type="radio"/>
+<span>Biomedical Informatics</span>
+</label>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Sponsorship Term</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-alabaster text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option>Single Semester (Spring 2025)</option>
+<option>Academic Year 2025-2026 (12 Months)</option>
+<option>Multi-Year Research Covenent (36 Months)</option>
+</select>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="cancelModalBtn">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" onclick="document.getElementById('initiativeModal').classList.add('hidden'); showSubmissionSuccess();">
+          Submit to Academic Placement Cell
+        </button>
+</div>
+</div>
+</div>
+<script>
+    const modal = document.getElementById('initiativeModal');
+    const openBtn = document.getElementById('openProposalModal');
+    const closeBtn = document.getElementById('closeProposalModal');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+    if (cancelBtn && modal) {
+      cancelBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    function showSubmissionSuccess() {
+      const toast = document.getElementById('proposalSuccessToast');
+      if (toast) {
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 5000);
+      }
+    }
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SCI Student Assessments &amp; Quizzes</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#818cf8",
+            "role-student-light": "#6366F1",
+            "surface-container-high": "#262a34",
+            "surface-container-lowest": "#0a0e17",
+            "secondary": "#4edea3",
+            "primary": "#6366F1",
+            "surface-container": "#1c1f29",
+            "text-primary": "#F8FAFC",
+            "surface-card": "#131C31",
+            "background": "#090D16",
+            "border-subtle": "#1E293B",
+            "text-muted": "#94A3B8",
+            "role-industry": "#10B981",
+            "primary-container": "#4f46e5",
+            "primary-fixed": "#e0e7ff",
+            "surface-container-low": "#0F172A",
+            "status-verified-bg": "rgba(16, 185, 129, 0.15)",
+            "status-verified-text": "#10B981"
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#090D16] font-sans text-slate-100 antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Shell (Consistent with Dark Mode Theme) -->
+<header class="sticky top-0 z-50 bg-[#0F172A] border-b border-[#1E293B] backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 gap-4">
+<!-- Left: SCI Official Logo Image & Platform Title -->
+<div class="flex items-center gap-3 shrink-0">
+<img alt="SCI Emblem" class="h-9 w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZjecLsA1ZBRzSlYCYdxTXBMaXQFLooUfCQ8m88Fzs-M9KK9gvxV98Z02Is0-wNUA-2wZ_141gdsP0ojIxK3k44iQKAOAZOvOxWMIQfHgK-szLD3JqsiSC7IvOy4oIx8rrZI0bQP0ZJLMfgQJ-qkjVbsmlcD-8egFbPSxeGuBX7-I0g1c6rpStYG-zMT3U9NIEMTNWGqW1Xt1fE8o4nuRgJSGTxM6SH5OidYU0FsNcYhODzJ54tDpomdoEIF-IYiIbMA"/>
+<div class="flex items-center gap-2">
+<span class="font-display font-bold text-white tracking-tight text-lg">SCI</span>
+<span class="text-slate-600 text-sm">/</span>
+<span class="text-xs sm:text-sm font-medium text-slate-400 tracking-tight">National Talent Platform</span>
+</div>
+</div>
+<!-- Center: Global search bar with ⌘K -->
+<div class="hidden md:flex flex-1 max-w-md mx-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">search</span>
+<input class="w-full h-9 pl-9 pr-14 bg-[#131C31] border border-[#1E293B] rounded-lg text-xs sm:text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all" placeholder="Search credentials, roles, competencies..." type="text"/>
+<div class="absolute right-2 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-[#1E293B] border border-slate-700 text-[10px] font-semibold text-slate-400 tracking-wider shadow-xs">
+            ⌘K
+          </div>
+</div>
+</div>
+<!-- Right: Actions & Candidate Profile Pill -->
+<div class="flex items-center gap-3 sm:gap-4 shrink-0">
+<!-- Upload CV Button -->
+<button class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#1E293B] bg-[#131C31] hover:bg-[#1E293B] text-xs font-semibold text-slate-200 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-sm text-slate-400">upload</span>
+<span>Upload CV</span>
+</button>
+<!-- Notification Bell -->
+<button class="relative p-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-[#1E293B] transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-xl leading-none">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-indigo-500 ring-2 ring-[#0F172A]"></span>
+</button>
+<!-- Profile Pill -->
+<div class="flex items-center gap-2.5 pl-1 sm:pl-2 border-l border-[#1E293B] cursor-pointer group">
+<div class="w-8 h-8 rounded-full bg-indigo-600 text-white font-semibold text-xs flex items-center justify-center shadow-sm">
+            RP
+          </div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-xs font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors leading-tight">Raghav Patel</span>
+<span class="text-[11px] text-slate-400 leading-tight">Computer Science, Class of 2026</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-base group-hover:text-slate-300 transition-colors">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Exact Sub-Navigation Bar (Tabs) -->
+<nav class="flex items-center gap-8 -mb-px overflow-x-auto border-t border-[#1E293B]/80 scrollbar-none">
+<a class="py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5" href="#">
+        Overview
+      </a>
+<a class="py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-2" href="#">
+        Opportunities
+        <span class="px-2 py-0.5 rounded-full bg-[#1E293B] text-slate-300 text-xs font-semibold">48</span>
+</a>
+<!-- Active Tab -->
+<a class="py-3 text-xs sm:text-sm font-semibold text-indigo-400 border-b-2 border-indigo-500 -mb-[1px] flex items-center gap-2" href="#">
+        Assessments
+        <span class="px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-bold">2</span>
+</a>
+<a class="py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors" href="#">
+        Skill Mapping
+      </a>
+<a class="py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors" href="#">
+        Credentials
+      </a>
+<a class="py-3 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors" href="#">
+        Settings
+      </a>
+</nav>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6">
+<!-- Page Header Section -->
+<section class="bg-[#131C31] rounded-2xl border border-white/10 shadow-sm p-6 sm:p-7 relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<!-- Title & Context -->
+<div class="max-w-2xl flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          ASSIGNMENTS &amp; ASSESSMENTS / AI-PROCTORED BENCHMARKS
+        </div>
+<h1 class="text-2xl sm:text-3xl font-extrabold text-[#F8FAFC] tracking-tight font-display mt-1">
+          Verified Skill Assessments &amp; Quizzes
+        </h1>
+<p class="text-sm sm:text-base text-slate-400 mt-1 max-w-2xl leading-relaxed">
+          Standardized proctored evaluations, adaptive technical quizzes, and terminal sandbox benchmarks verified directly to your sovereign academic transcript.
+        </p>
+</div>
+<!-- Right Summary Stats Block -->
+<div class="grid grid-cols-3 gap-3 self-stretch lg:self-auto shrink-0">
+<!-- Stat 1 -->
+<div class="bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 flex flex-col justify-between min-w-[130px]">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Matched / Scheduled</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="text-xl font-bold font-display text-white">2</span>
+<span class="text-[11px] font-semibold text-emerald-400">Due Soon</span>
+</div>
+<span class="text-[11px] text-slate-400 font-medium">Instant Eligibility</span>
+</div>
+<!-- Stat 2 -->
+<div class="bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 flex flex-col justify-between min-w-[130px]">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Proctored Average</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="text-xl font-bold font-display text-emerald-400">91%</span>
+<span class="text-[11px] font-semibold text-slate-400">Score</span>
+</div>
+<span class="text-[11px] text-slate-400 font-medium truncate">Top 4% National</span>
+</div>
+<!-- Stat 3 -->
+<div class="bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 flex flex-col justify-between min-w-[130px]">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Depository Sync</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="text-xl font-bold font-display text-indigo-400">14</span>
+<span class="text-[11px] font-semibold text-indigo-400">Verified</span>
+</div>
+<span class="text-[11px] text-slate-400 font-medium">Zero Discrepancies</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Segmentation Controller -->
+<section class="bg-[#131C31] rounded-xl border border-[#1E293B] shadow-sm p-3.5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Filter pill buttons on left -->
+<div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+<button class="px-3.5 py-1.5 rounded-lg bg-[#6366F1] text-white font-semibold text-xs shadow-xs whitespace-nowrap transition-colors" type="button">
+        All Assessments (16)
+      </button>
+<button class="px-3.5 py-1.5 rounded-lg text-slate-300 hover:bg-[#1E293B] hover:text-white font-semibold text-xs whitespace-nowrap transition-colors" type="button">
+        Proctored Coding (6)
+      </button>
+<button class="px-3.5 py-1.5 rounded-lg text-slate-300 hover:bg-[#1E293B] hover:text-white font-semibold text-xs whitespace-nowrap transition-colors" type="button">
+        Adaptive Quizzes (5)
+      </button>
+<button class="px-3.5 py-1.5 rounded-lg text-slate-300 hover:bg-[#1E293B] hover:text-white font-semibold text-xs whitespace-nowrap transition-colors" type="button">
+        Oral Defenses (5)
+      </button>
+</div>
+<!-- Search & sort controls on right -->
+<div class="flex flex-wrap items-center gap-2.5">
+<div class="relative w-full sm:w-60">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm pointer-events-none">search</span>
+<input class="w-full h-8 pl-8 pr-3 bg-[#0F172A] border border-[#1E293B] rounded-lg text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 transition-all" placeholder="Search evaluations..." type="text"/>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-slate-400 text-sm pointer-events-none">swap_vert</span>
+<select class="h-8 pl-8 pr-8 bg-[#0F172A] hover:bg-[#1E293B] border border-[#1E293B] text-slate-200 font-semibold text-xs rounded-lg appearance-none cursor-pointer focus:outline-none transition-colors">
+<option selected="">Sort: Urgency / Due Date</option>
+<option>Sort: Highest Weightage</option>
+<option>Sort: Percentile (High to Low)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 text-slate-400 text-sm pointer-events-none">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Immediate Action Required (Due Soon) Section -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+<h2 class="text-base sm:text-lg font-bold text-white font-display">Immediate Action Required (Due Soon)</h2>
+<span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-bold">2 Pending</span>
+</div>
+<span class="text-xs text-slate-400 font-medium">Proctored session slots close 15 minutes before deadline</span>
+</div>
+<!-- 2 Modern Rich Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Card 1: Advanced React 19 & Architecture Benchmark -->
+<article class="bg-[#131C31] rounded-2xl p-6 border border-white/10 hover:border-white/20 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<!-- Badges -->
+<div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-indigo-500/15 text-indigo-300 text-xs font-semibold border border-indigo-500/20">
+                PROCTORED TERMINAL
+              </span>
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 text-xs font-medium border border-slate-700/50">
+                ⏱ 45 mins
+              </span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-rose-500/15 text-rose-400 font-medium text-xs border border-rose-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">alarm</span> 28h left
+            </span>
+</div>
+<!-- Title & Context -->
+<h3 class="text-lg font-bold font-display text-[#F8FAFC] group-hover:text-indigo-400 transition-colors leading-snug">
+            Advanced React 19 &amp; Architecture Benchmark
+          </h3>
+<p class="text-xs text-slate-400 mt-1 font-normal">
+            National Systems Engineering Sandbox • Semester VI Final Evaluator
+          </p>
+<!-- Focus box -->
+<div class="bg-[#0F172A] border border-[#1E293B] rounded-xl p-4 my-4">
+<div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+              EVALUATION FOCUS
+            </div>
+<p class="text-xs text-slate-300 leading-relaxed font-normal">
+              SSR hydration mechanics, Server Actions pipeline, and concurrent scheduling primitives under synthetic memory constraints.
+            </p>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-4 border-t border-[#1E293B] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-1.5 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+<span>Cam &amp; Screen Diagnostics Ready • <span class="font-mono font-medium text-slate-300">ID: NAD-R19-9021</span></span>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#6366F1] hover:bg-indigo-500 text-white font-medium text-sm shadow-sm transition-all shrink-0" type="button">
+<span>Launch Sandbox Session</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Distributed Systems & Consensus Mechanics -->
+<article class="bg-[#131C31] rounded-2xl p-6 border border-white/10 hover:border-white/20 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<!-- Badges -->
+<div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-300 text-xs font-semibold border border-blue-500/20">
+                MULTI-VARIANT QUIZ
+              </span>
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 text-xs font-medium border border-slate-700/50">
+                ⏱ 30 mins
+              </span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-400 font-medium text-xs border border-amber-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">calendar_today</span> 3 days left
+            </span>
+</div>
+<!-- Title & Context -->
+<h3 class="text-lg font-bold font-display text-[#F8FAFC] group-hover:text-indigo-400 transition-colors leading-snug">
+            Distributed Systems &amp; Consensus Mechanics
+          </h3>
+<p class="text-xs text-slate-400 mt-1 font-normal">
+            Adaptive Theory &amp; Protocol Verification • Cloud Infrastructure Cohort
+          </p>
+<!-- Focus box -->
+<div class="bg-[#0F172A] border border-[#1E293B] rounded-xl p-4 my-4">
+<div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+              EVALUATION FOCUS
+            </div>
+<p class="text-xs text-slate-300 leading-relaxed font-normal">
+              Raft protocol leadership election, partition tolerance edge cases, and monotonic read eventual consistency models.
+            </p>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-4 border-t border-[#1E293B] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-1.5 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-indigo-400 text-sm">lock</span>
+<span>Adaptive Question Matrix (24 MCQs) • <span class="font-mono font-medium text-slate-300">ID: NAD-DSC-4412</span></span>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#1E293B] hover:bg-[#283548] text-indigo-300 border border-indigo-500/30 font-medium text-sm transition-all shrink-0" type="button">
+<span>Start Proctored Quiz</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Completed & Verified Evaluations Section -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<h2 class="text-base sm:text-lg font-bold text-white font-display">Completed &amp; Verified Evaluations</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-semibold border border-emerald-500/20 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          Academic Transcript Sync Active
+        </span>
+</div>
+<button class="text-indigo-400 hover:text-indigo-300 text-xs font-semibold flex items-center gap-1.5 transition-colors" type="button">
+<span>Download Sealed Evaluation Transcript (PDF)</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<!-- Data Table Card -->
+<div class="bg-[#0F172A] rounded-xl border border-[#1E293B] shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead class="bg-[#1E293B] border-b border-[#1E293B] text-slate-400 font-bold uppercase tracking-wider text-[11px]">
+<tr>
+<th class="py-3.5 px-6" scope="col">Assessment Module &amp; Focus</th>
+<th class="py-3.5 px-4" scope="col">Evaluation Type</th>
+<th class="py-3.5 px-4" scope="col">Score &amp; Percentile</th>
+<th class="py-3.5 px-4" scope="col">Verified Date</th>
+<th class="py-3.5 px-4" scope="col">Transcript Credential</th>
+<th class="py-3.5 px-6 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#1E293B]/70">
+<!-- Row 1 -->
+<tr class="hover:bg-[#131C31] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-[#1E293B] text-slate-300 border border-slate-700/60 flex items-center justify-center font-bold text-sm shrink-0">
+<span class="material-symbols-outlined text-base text-slate-300">record_voice_over</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-white text-xs">Technical Communication &amp; System RFC Defense</span>
+<span class="text-[11px] text-slate-400 mt-0.5">Academic Faculty Board • Architecture Panel</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 font-medium text-[11px] border border-slate-700/50">Oral + Written Defense</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-bold text-white text-xs">89 / 100</span>
+<span class="text-[11px] font-semibold text-slate-400">Standard Honors</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-400 text-xs font-mono">
+                Aug 30, 2026
+              </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[rgba(16,185,129,0.15)] text-[#10B981] border border-emerald-500/25 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs font-bold">check_circle</span>
+                  Verified &amp; Sealed
+                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="text-indigo-400 hover:text-indigo-300 font-semibold text-xs inline-flex items-center gap-1 transition-colors" href="#">
+<span>View Diagnostics</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#131C31] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-[#1E293B] text-slate-300 border border-slate-700/60 flex items-center justify-center font-bold text-sm shrink-0">
+<span class="material-symbols-outlined text-base text-slate-300">code</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-white text-xs">Advanced TypeScript &amp; Type Systems</span>
+<span class="text-[11px] text-slate-400 mt-0.5">Compiler API, Generics &amp; AST Analysis Benchmark</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 font-medium text-[11px] border border-slate-700/50">Proctored Code Evaluation</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-bold text-white text-xs">94 / 100</span>
+<span class="text-[11px] font-semibold text-emerald-400">Top 4% Global</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-400 text-xs font-mono">
+                Jul 15, 2026
+              </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[rgba(16,185,129,0.15)] text-[#10B981] border border-emerald-500/25 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs font-bold">check_circle</span>
+                  Verified &amp; Sealed
+                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="text-indigo-400 hover:text-indigo-300 font-semibold text-xs inline-flex items-center gap-1 transition-colors" href="#">
+<span>View Diagnostics</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#131C31] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-[#1E293B] text-slate-300 border border-slate-700/60 flex items-center justify-center font-bold text-sm shrink-0">
+<span class="material-symbols-outlined text-base text-slate-300">database</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-white text-xs">PostgreSQL Optimization &amp; Sharding</span>
+<span class="text-[11px] text-slate-400 mt-0.5">High-Throughput Concurrency &amp; WAL Stress Sandbox</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 font-medium text-[11px] border border-slate-700/50">Sandbox Benchmark</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-bold text-white text-xs">91 / 100</span>
+<span class="text-[11px] font-semibold text-emerald-400">High Honors</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-400 text-xs font-mono">
+                Jun 22, 2026
+              </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[rgba(16,185,129,0.15)] text-[#10B981] border border-emerald-500/25 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs font-bold">check_circle</span>
+                  Verified &amp; Sealed
+                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="text-indigo-400 hover:text-indigo-300 font-semibold text-xs inline-flex items-center gap-1 transition-colors" href="#">
+<span>View Diagnostics</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#131C31] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-[#1E293B] text-slate-300 border border-slate-700/60 flex items-center justify-center font-bold text-sm shrink-0">
+<span class="material-symbols-outlined text-base text-slate-300">terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-white text-xs">Microservices &amp; Distributed Tracing</span>
+<span class="text-[11px] text-slate-400 mt-0.5">OpenTelemetry, gRPC Ingress &amp; Circuit Breakers</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-md bg-[#1E293B] text-slate-300 font-medium text-[11px] border border-slate-700/50">Terminal Practical</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-bold text-white text-xs">88 / 100</span>
+<span class="text-[11px] font-semibold text-slate-400">Verified Competency</span>
+</div>
+</td>
+<td class="py-4 px-4 text-slate-400 text-xs font-mono">
+                May 18, 2026
+              </td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[rgba(16,185,129,0.15)] text-[#10B981] border border-emerald-500/25 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs font-bold">check_circle</span>
+                  Verified &amp; Sealed
+                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<a class="text-indigo-400 hover:text-indigo-300 font-semibold text-xs inline-flex items-center gap-1 transition-colors" href="#">
+<span>View Diagnostics</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-3 bg-[#0F172A] border-t border-[#1E293B] flex items-center justify-between text-slate-400 text-xs">
+<span>Showing 4 of 14 verified submissions</span>
+<div class="flex items-center gap-1.5">
+<button class="p-1 rounded-md hover:bg-[#1E293B] text-slate-600 disabled:opacity-40 transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-base leading-none">chevron_left</span>
+</button>
+<span class="px-2.5 py-0.5 rounded-md bg-[#131C31] border border-[#1E293B] text-white font-semibold text-xs shadow-xs">1</span>
+<button class="p-1 rounded-md hover:bg-[#1E293B] text-slate-300 transition-colors" type="button">
+<span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional Bottom Assurance Banner -->
+<aside class="bg-[#131C31] rounded-xl border border-[#1E293B] p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-[#0F172A] text-slate-300 border border-[#1E293B] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl text-indigo-400">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white font-display">National Academic Depository Sovereign Assurance</span>
+<p class="text-xs text-slate-400 mt-0.5 leading-relaxed">
+          All assessment sessions are cryptographically signed and submitted to the National Academic Depository under institutional protocol ISO/IEC 27001.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-2.5 py-1 rounded-md bg-[#0F172A] text-slate-400 text-[11px] font-mono font-medium border border-[#1E293B]">Protocol v4.19-NAD</span>
+<span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 text-[11px] font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        Ledger Validated
+      </span>
+</div>
+</aside>
+</main>
+<!-- Exact Unified Footer (Identical in Dark Mode) -->
+<footer class="mt-auto border-t border-[#1E293B] bg-[#090D16] py-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400 text-base">verified_user</span>
+<span>© 2026 Sovereign Credential Infrastructure. All rights reserved.</span>
+</div>
+<div class="flex items-center gap-5 font-medium flex-wrap">
+<a class="text-slate-500 hover:text-slate-300 transition-colors" href="#">National Academic Depository</a>
+<a class="text-slate-500 hover:text-slate-300 transition-colors" href="#">Candidate Privacy Policy</a>
+<a class="text-slate-500 hover:text-slate-300 transition-colors" href="#">Support &amp; Help Center</a>
+<a class="text-slate-500 hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

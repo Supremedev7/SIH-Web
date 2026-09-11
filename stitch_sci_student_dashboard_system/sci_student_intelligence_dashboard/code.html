@@ -1,0 +1,522 @@
+<!DOCTYPE html><html class="h-full bg-white" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SCI Verified Candidate Platform — Linear &amp; Next.js Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8faff',
+              100: '#eef2ff',
+              500: '#4338ca',
+              600: '#3730a3',
+              900: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+            display: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background-color: #ffffff;
+        color: #0f172a;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+    }
+
+    /* Abstract micro-grid & subtle aura background */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+    }
+
+    .subtle-mesh {
+      background: radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.04) 0px, transparent 50%),
+                  radial-gradient(at 85% 20%, rgba(14, 165, 233, 0.03) 0px, transparent 50%),
+                  radial-gradient(at 50% 90%, rgba(241, 245, 249, 0.5) 0px, transparent 70%);
+    }
+
+    /* Linear/Vercel custom scrollbars */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #CBD5E1; }
+
+    /* Interaction transitions */
+    .item-card {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .item-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.04);
+    }
+
+    .btn-action {
+      transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-sans bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
+<!-- TOP HEADER / NAV (Linear & Vercel Inspired) -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-14">
+<!-- Left: Crest + Identity & Monospace Tag -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3 group" href="#"><div class="h-9 flex items-center justify-center shrink-0"><img alt="SCI Crest" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDu5ZwDKp03TKURLXDHxd951lb_1yd79D4DVH5J3GQVyQn3u_2YZSy5c6V5NOLqQCyeSPI2NbmiNJ57GBx-cgY4BIB5bEuiyLc0Thtbuah_O1VnK_rNL77WTqGm25FA6dQozOdM5F0oBhPch0HCIkwz8ChrasPDIl4EqfWKB8FWmiqN-M2FdBsMZmqx6M8CE_Nnv1ud9Dif_L6e1zr3n7EUGJvQk-VHbM9GgfU1g84-169FYp2HZ1Oe0_BeDZ0ftJsSQ"></div><div class="flex items-center gap-2"><span class="font-bold text-base text-slate-900 tracking-tight font-display">SCI</span><span class="text-slate-300">/</span><span class="text-xs text-slate-500 font-medium">National Talent Platform</span></div></a>
+</div>
+<!-- Center: Search Command Bar -->
+<div class="hidden md:flex items-center flex-1 max-w-sm mx-8">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full h-8 pl-8 pr-12 text-xs bg-slate-50/70 border border-slate-200/80 rounded-md placeholder:text-slate-400 text-slate-800 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900 focus:bg-white transition-all" placeholder="Search credentials, roles, competencies..." type="text">
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-0.5 pointer-events-none text-[10px] font-mono text-slate-400 bg-white border border-slate-200/80 px-1.5 py-0.5 rounded shadow-2xs">
+<span class="">⌘</span><span class="">K</span>
+</div>
+</div>
+</div>
+<!-- Right: Actions & User Dropdown -->
+<div class="flex items-center gap-3">
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md border border-slate-200/80 transition-colors btn-action"><span class="material-symbols-outlined text-[15px] text-slate-500">upload_file</span>
+<span class="">Upload CV</span></button>
+<button class="relative p-1.5 text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-50 border border-slate-200/60 transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-4 w-px bg-slate-200"></div>
+<!-- User profile link -->
+<div class="flex items-center gap-2.5 cursor-pointer p-1 rounded-md hover:bg-slate-50 transition-colors">
+<div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-medium font-mono">
+              RP
+            </div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-xs font-medium text-slate-900 leading-none">Raghav Patel</span>
+<span class="text-[10px] font-mono text-slate-400 mt-0.5">Computer Science, Class of 2026</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[14px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Linear Style Navigation Tabs -->
+<nav class="flex items-center space-x-6 -mb-px pt-1 text-xs border-t border-slate-100"><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-indigo-600 text-indigo-600 font-semibold" href="#"><span class="material-symbols-outlined text-[15px]">grid_view</span><span class="">Overview</span></a><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium transition-colors" href="#"><span class="material-symbols-outlined text-[15px]">work_outline</span><span class="">Opportunities</span><span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">48</span></a><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium transition-colors" href="#"><span class="material-symbols-outlined text-[15px]">terminal</span><span class="">Assessments</span><span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">2</span></a><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium transition-colors" href="#"><span class="material-symbols-outlined text-[15px]">hub</span><span class="">Skill Mapping</span></a><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium transition-colors" href="#"><span class="material-symbols-outlined text-[15px]">shield_check</span><span class="">Credentials</span></a><a class="inline-flex items-center gap-1.5 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium transition-colors" href="#"><span class="material-symbols-outlined text-[15px]">tune</span><span class="">Settings</span></a></nav>
+</div>
+</header>
+<!-- MAIN BODY -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-7 space-y-7">
+<!-- ELEGANT ABSTRACT HERO STRIP (Clean SaaS telemetry, no saturated pills) -->
+<section class="relative rounded-xl border border-slate-200/80 bg-white p-6 overflow-hidden bg-grid-pattern subtle-mesh">
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+<div class="space-y-2 max-w-2xl">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-mono"><span class="text-xs text-slate-500 font-medium">Student Portal</span>
+<span class="text-slate-300">/</span>
+<span class="text-xs text-slate-500 font-medium">Verified Academic Profile</span></div>
+<h1 class="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900 font-display">
+            Welcome back, Raghav
+          </h1>
+<p class="text-xs text-slate-500 max-w-xl leading-relaxed">Explore curated career opportunities, assessments, and interview updates from 420+ leading employers.</p>
+</div>
+<!-- Abstract Metric Strip (Monochrome, subtle border dividers, pure hierarchy) -->
+<div class="flex flex-wrap items-center gap-6 lg:gap-8 border-t lg:border-t-0 lg:border-l border-slate-200/80 pt-4 lg:pt-0 lg:pl-8">
+<div>
+<div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Profile Readiness</div>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-2xl font-semibold tracking-tight text-slate-900 font-mono">94%</span>
+<span class="text-[11px] text-slate-400 font-mono">/ Top 6%</span>
+</div>
+<div class="w-32 bg-slate-100 rounded-full h-1 mt-2">
+<div class="bg-slate-900 h-1 rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<div>
+<div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Active Reviews</div>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-2xl font-semibold tracking-tight text-slate-900 font-mono">3</span>
+<span class="text-[11px] text-slate-400">in pipeline</span>
+</div>
+<div class="text-[11px] text-slate-500 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-slate-400">schedule</span>
+              Next: Tomorrow, 3:30 PM
+            </div>
+</div>
+<div>
+<div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Recruiter Pings</div>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-2xl font-semibold tracking-tight text-slate-900 font-mono">16</span>
+<span class="text-[11px] text-slate-400">this cycle</span>
+</div>
+<div class="text-[11px] text-slate-500 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-slate-400">visibility</span>
+              3 Shortlists verified
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTENT GRID (8 Cols Content / 4 Cols Rail) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-7">
+<!-- LEFT COLUMN: Matched Roles & Sprints (col-span-8) -->
+<div class="lg:col-span-8 space-y-7">
+<!-- SECTION: Curated Opportunities -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+<div>
+<h2 class="text-sm font-semibold text-slate-900 font-display">Ranked Opportunities</h2>
+<p class="text-xs text-slate-400 mt-0.5">Deterministic matching derived from verified sandbox evaluations</p>
+</div>
+<!-- Sleek Tab Filter -->
+<div class="flex items-center gap-1 bg-slate-50 p-0.5 rounded-lg border border-slate-200/70 text-xs">
+<button class="px-2.5 py-1 rounded font-medium bg-white text-slate-900 shadow-2xs">Curated</button>
+<button class="px-2.5 py-1 rounded text-slate-500 hover:text-slate-800 transition-colors">Internships</button>
+<button class="px-2.5 py-1 rounded text-slate-500 hover:text-slate-800 transition-colors">Full-Time</button>
+</div>
+</div>
+<!-- Opportunities List (Clean typography, no garish badges) -->
+<div class="space-y-3">
+<!-- Card 1 -->
+<div class="item-card rounded-lg border border-slate-200/70 p-4 bg-white"><div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+  <div class="flex items-start gap-3.5">
+    <div class="w-10 h-10 rounded-md bg-slate-900 text-white flex items-center justify-center font-mono font-medium text-xs shrink-0 tracking-tight">
+      NL
+    </div>
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-semibold text-slate-900">Nexus Labs</span>
+        <span class="text-slate-300">/</span>
+        <span class="text-xs text-slate-500 font-mono">94% match</span>
+      </div>
+      <h3 class="text-sm font-medium text-slate-800">Platform Engineer (Distributed Systems)</h3>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 pt-0.5">
+        <span class="font-medium text-slate-700">₹18 – ₹24 LPA</span>
+        <span class="text-slate-300">•</span>
+        <span class="">Bengaluru (Hybrid)</span>
+        <span class="text-slate-300">•</span>
+        <span class="text-[11px] text-slate-400">Full-Time Graduate Role</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 shrink-0">
+    <button class="btn-action px-3.5 py-1.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors">
+      Apply Now
+    </button>
+  </div>
+</div>
+<div class="mt-3.5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 font-sans gap-2">
+  <div class="flex items-center gap-3 text-slate-600">
+    <span class="">TypeScript</span>
+    <span class="">PostgreSQL</span>
+    <span class="">Kafka</span>
+    <span class="">System Design</span>
+  </div>
+  <span class="text-[11px] text-slate-400">Recommended by Career Services</span>
+</div></div>
+<!-- Card 2 -->
+<div class="item-card rounded-lg border border-slate-200/70 p-4 bg-white"><div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+  <div class="flex items-start gap-3.5">
+    <div class="w-10 h-10 rounded-md bg-slate-800 text-white flex items-center justify-center font-mono font-medium text-xs shrink-0 tracking-tight">
+      VD
+    </div>
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-semibold text-slate-900">Vector Dynamics</span>
+        <span class="text-slate-300">/</span>
+        <span class="text-xs text-slate-500 font-mono">91% match</span>
+      </div>
+      <h3 class="text-sm font-medium text-slate-800">AI Systems &amp; Latency Engineering Intern</h3>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 pt-0.5">
+        <span class="font-medium text-slate-700">₹50,000 / month</span>
+        <span class="text-slate-300">•</span>
+        <span class="">Remote</span>
+        <span class="text-slate-300">•</span>
+        <span class="">6 Months Duration</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 shrink-0">
+    <button class="btn-action px-3.5 py-1.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors">
+      Apply Now
+    </button>
+  </div>
+</div>
+<div class="mt-3.5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 font-sans gap-2">
+  <div class="flex items-center gap-3 text-slate-600">
+    <span class="">Python</span>
+    <span class="">FastAPI</span>
+    <span class="">PyTorch</span>
+    <span class="">Machine Learning</span>
+  </div>
+  <span class="text-[11px] text-slate-400">Direct interview shortlisting</span>
+</div></div>
+<!-- Card 3 -->
+<div class="item-card rounded-lg border border-slate-200/70 p-4 bg-white"><div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+  <div class="flex items-start gap-3.5">
+    <div class="w-10 h-10 rounded-md bg-slate-700 text-white flex items-center justify-center font-mono font-medium text-xs shrink-0 tracking-tight">
+      AS
+    </div>
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-semibold text-slate-900">Astra Space Technologies</span>
+        <span class="text-slate-300">/</span>
+        <span class="text-xs text-slate-500 font-mono">88% match</span>
+      </div>
+      <h3 class="text-sm font-medium text-slate-800">Telemetry &amp; Edge Infrastructure Associate</h3>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 pt-0.5">
+        <span class="font-medium text-slate-700">₹16 – ₹22 LPA</span>
+        <span class="text-slate-300">•</span>
+        <span class="">Hyderabad</span>
+        <span class="text-slate-300">•</span>
+        <span class="">Engineering Team</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 shrink-0">
+    <button class="btn-action px-3.5 py-1.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors">
+      Apply Now
+    </button>
+  </div>
+</div>
+<div class="mt-3.5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 font-sans gap-2">
+  <div class="flex items-center gap-3 text-slate-600">
+    <span class="">Rust</span>
+    <span class="">Cloud Systems</span>
+    <span class="">Networking</span>
+    <span class="">APIs</span>
+  </div>
+  <span class="text-[11px] text-slate-400">Campus placement partner</span>
+</div></div>
+</div>
+<div class="pt-2 text-center">
+<button class="w-full py-2 border border-slate-200/80 hover:border-slate-300 text-xs font-medium text-slate-600 hover:text-slate-900 rounded-md transition-colors flex items-center justify-center gap-1.5">
+<span class="">View all 48 opportunities</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- SECTION: Proctored Assessments & Sandboxes (Unstop & Next.js styled) -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100"><div class="">
+  <h2 class="text-sm font-semibold text-slate-900 font-display">Skill Assessments</h2>
+  <p class="text-xs text-slate-400 mt-0.5">Certified evaluations endorsed by hiring partners</p>
+</div>
+<span class="text-xs font-mono text-slate-400">2 Pending</span></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="item-card p-4 rounded-lg border border-slate-200/70 bg-white flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span class="">Due in 48h</span>
+<span class="">30m • 20 MCQs</span>
+</div>
+<h3 class="text-sm font-medium text-slate-900">Advanced React 19 &amp; Architecture</h3>
+<p class="text-xs text-slate-500 leading-relaxed">Evaluation covering SSR hydration mechanics, Server Actions, and concurrent scheduling primitives.</p>
+</div>
+<div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] font-mono text-slate-400">Certificate Included</span>
+<button class="btn-action px-3 py-1.5 rounded bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors flex items-center gap-1">
+<span class="">Launch Sandbox</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="item-card p-4 rounded-lg border border-slate-200/70 bg-white flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span class="">Open Window</span>
+<span class="">45m • Debugging</span>
+</div>
+<h3 class="text-sm font-medium text-slate-900">Distributed Database Partitioning</h3>
+<p class="text-xs text-slate-500 leading-relaxed">Diagnose index contention, replica sync latency, and partition rebalancing under live synthetic load.</p>
+</div>
+<div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] font-mono text-slate-400">Self-Paced</span>
+<button class="btn-action px-3 py-1.5 rounded bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 text-xs font-medium transition-colors flex items-center gap-1">
+<span class="">Begin Challenge</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Smart India Hackathon Note -->
+<div class="p-3.5 rounded-lg border border-slate-200/70 bg-slate-50/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+<div class="flex items-start sm:items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 text-lg">flag</span>
+<div>
+<h4 class="text-xs font-medium text-slate-900">Smart India National Hackathon 2025</h4>
+<p class="text-[11px] text-slate-500">Candidate score meets pre-qualification criteria for stage-2 institutional review.</p>
+</div>
+</div>
+<button class="btn-action px-3 py-1 rounded bg-white border border-slate-200 hover:border-slate-300 text-xs font-medium text-slate-700 transition-colors shrink-0">Register Team</button>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDE RAIL: Pipeline, Verified Credentials, Schedule (col-span-4) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- ATS APPLICATION TRACKER -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<h3 class="text-xs font-semibold text-slate-900 font-display">Active Submissions</h3>
+<span class="text-[11px] font-mono text-slate-400">3 In Flight</span>
+</div>
+<!-- Application Item 1 -->
+<div class="p-3 rounded-lg border border-slate-200/70 bg-slate-50/30 space-y-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-xs font-semibold text-slate-900">HyperScale Networks</div>
+<div class="text-[11px] text-slate-500">Backend Platform Engineer</div>
+</div>
+<span class="text-[10px] font-mono text-slate-500">Round 2 / 4</span>
+</div>
+<!-- Sleek Minimal Stepper -->
+<div class="space-y-1">
+<div class="grid grid-cols-4 gap-1">
+<div class="h-1 rounded-full bg-slate-900"></div>
+<div class="h-1 rounded-full bg-slate-900"></div>
+<div class="h-1 rounded-full bg-slate-900"></div>
+<div class="h-1 rounded-full bg-slate-200"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
+<span class="">Resume</span>
+<span class="">Sandbox</span>
+<span class="text-slate-900 font-medium">Architecture</span>
+<span class="">Offer</span>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+<span class="text-slate-500 text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-slate-400">videocam</span> Tomorrow, 3:30 PM
+              </span>
+<a class="text-slate-900 font-medium hover:underline text-[11px]" href="#">Interview Link</a>
+</div>
+</div>
+<!-- Application Item 2 -->
+<div class="p-3 rounded-lg border border-slate-200/70 bg-slate-50/30 space-y-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-xs font-semibold text-slate-900">Credo FinTech Labs</div>
+<div class="text-[11px] text-slate-500">Junior Full-Stack Dev</div>
+</div>
+<span class="text-[10px] font-mono text-slate-500">Under Review</span>
+</div>
+<div class="space-y-1">
+<div class="grid grid-cols-4 gap-1">
+<div class="h-1 rounded-full bg-slate-900"></div>
+<div class="h-1 rounded-full bg-slate-300"></div>
+<div class="h-1 rounded-full bg-slate-200"></div>
+<div class="h-1 rounded-full bg-slate-200"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
+<span class="text-slate-900 font-medium">Screening</span>
+<span class="">Tech</span>
+<span class="">Founders</span>
+<span class="">Final</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CRYPTOGRAPHIC CREDENTIALS -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 space-y-4"><div class="flex items-center justify-between pb-3 border-b border-slate-100">
+  <h3 class="text-xs font-semibold text-slate-900 font-display">Verified Transcript</h3>
+  <a class="text-[11px] text-slate-400 hover:text-slate-800 transition-colors" href="#">Export</a>
+</div>
+<div class="space-y-2 text-xs">
+  <div class="p-2.5 rounded border border-slate-200/60 flex items-center justify-between">
+    <div>
+      <div class="font-medium text-slate-800">TypeScript Architecture</div>
+      <div class="text-[10px] text-slate-400">Verified by Institute • 98th Percentile</div>
+    </div>
+    <span class="text-[11px] font-mono text-slate-500">Tier 1</span>
+  </div>
+  <div class="p-2.5 rounded border border-slate-200/60 flex items-center justify-between">
+    <div>
+      <div class="font-medium text-slate-800">Backend &amp; API Systems</div>
+      <div class="text-[10px] text-slate-400">Verified by Institute • 91% Score</div>
+    </div>
+    <span class="text-[11px] font-mono text-slate-500">Tier 1</span>
+  </div>
+  <div class="p-2.5 rounded border border-slate-200/60 flex items-center justify-between">
+    <div>
+      <div class="font-medium text-slate-800">Algorithms &amp; Problem Solving</div>
+      <div class="text-[10px] text-slate-400">Verified by Institute • 96% Score</div>
+    </div>
+    <span class="text-[11px] font-mono text-slate-500">Top 1%</span>
+  </div>
+</div>
+<div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+  <span class="text-slate-400">Academic Records Verified</span>
+  <a class="text-slate-900 font-medium hover:underline" href="#">Download Transcript (PDF)</a>
+</div></div>
+<!-- UPCOMING TIMELINE -->
+<div class="bg-white rounded-xl border border-slate-200/80 p-5 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<h3 class="text-xs font-semibold text-slate-900 font-display">Upcoming Schedule</h3>
+<span class="text-[11px] font-mono text-slate-400">Oct – Nov 2025</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded border border-slate-200 text-slate-800 flex flex-col items-center justify-center shrink-0 bg-slate-50">
+<span class="text-[8px] font-mono uppercase text-slate-400 leading-none">OCT</span>
+<span class="text-xs font-bold leading-tight mt-0.5">28</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-medium text-slate-900 truncate">React Assessment Slot Closes</h4>
+<p class="text-[11px] text-slate-400">11:59 PM IST • Auto-submit enabled</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded border border-slate-200 text-slate-800 flex flex-col items-center justify-center shrink-0 bg-slate-50">
+<span class="text-[8px] font-mono uppercase text-slate-400 leading-none">OCT</span>
+<span class="text-xs font-bold leading-tight mt-0.5">29</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-medium text-slate-900 truncate">Nexus Labs Tech Discussion</h4>
+<p class="text-[11px] text-slate-400">With Principal Architect • 45 mins</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded border border-slate-200 text-slate-800 flex flex-col items-center justify-center shrink-0 bg-slate-50">
+<span class="text-[8px] font-mono uppercase text-slate-400 leading-none">NOV</span>
+<span class="text-xs font-bold leading-tight mt-0.5">02</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-medium text-slate-900 truncate">Hackathon Phase 1 Deadline</h4>
+<p class="text-[11px] text-slate-400">Project Submission &amp; Demo Link</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- REFINED MINIMAL STATUS FOOTER (Linear / Vercel Telemetry) -->
+<footer class="pt-8 pb-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono"><div class="flex items-center gap-2">
+  <span class="text-slate-500">© 2026 Sovereign Credential Infrastructure. All rights reserved.</span>
+</div>
+<div class="flex items-center gap-4 text-[11px]">
+  <a class="hover:text-slate-700 transition-colors" href="#">National Academic Depository</a>
+  <a class="hover:text-slate-700 transition-colors" href="#">Candidate Privacy Policy</a>
+  <a class="hover:text-slate-700 transition-colors" href="#">Support &amp; Help Center</a>
+  <a class="hover:text-slate-700 transition-colors" href="#">Terms of Service</a>
+</div></footer>
+</main>
+
+
+</body></html>

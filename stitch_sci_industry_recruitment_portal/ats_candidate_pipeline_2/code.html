@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#7dd6c3", "on-primary-container": "#a4feea", "surface": "#faf8ff", "on-tertiary-fixed": "#2a1700", "surface-tint": "#006b5c", "surface-alabaster-card": "#FFFFFF", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#ffffff", "surface-obsidian": "#090D14", "primary-fixed": "#99f3df", "inverse-surface": "#283044", "border-alabaster-strong": "#CBD5E1", "on-error": "#ffffff", "surface-variant": "#dae2fd", "match-medium": "#F59E0B", "surface-bright": "#faf8ff", "on-primary-fixed": "#00201b", "surface-container-low": "#f2f3ff", "secondary-fixed": "#d8e3fb", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "surface-container": "#eaedff", "primary-fixed-dim": "#7dd6c3", "on-primary": "#ffffff", "surface-obsidian-subtle": "#1E293B", "on-secondary": "#ffffff", "primary": "#005e51", "border-obsidian": "#1E293B", "outline-variant": "#bdc9c5", "on-tertiary-container": "#ffead5", "border-alabaster": "#E2E8F0", "teal-glow": "rgba(14, 121, 105, 0.15)", "surface-alabaster-subtle": "#F1F5F9", "tertiary": "#764900", "on-secondary-container": "#586377", "on-primary-fixed-variant": "#005045", "on-surface": "#131b2e", "surface-alabaster": "#F8FAFC", "verified-badge": "#0284C7", "on-background": "#131b2e", "border-obsidian-strong": "#334155", "secondary-container": "#d5e0f8", "match-high": "#0E7969", "outline": "#6e7a76", "tertiary-fixed": "#ffddb8", "surface-obsidian-card": "#0F172A", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#3c475a", "error": "#ba1a1a", "on-secondary-fixed": "#111c2d", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "primary-container": "#0e7969", "match-low": "#E11D48", "on-error-container": "#93000a", "on-surface-variant": "#3e4946", "secondary-fixed-dim": "#bcc7de", "surface-dim": "#d2d9f4", "tertiary-container": "#975f00", "secondary": "#545f73", "background": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gap-dashboard": "1.25rem", "sidebar-width": "16rem", "cell-pad-y": "0.625rem", "drawer-width-lg": "40rem", "kanban-col-w": "18.5rem", "drawer-width": "30rem", "gutter-table": "0.75rem", "pad-card": "1.25rem", "cell-pad-x": "1rem", "sidebar-collapsed": "4.5rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "data-mono": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "title-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "data-mono": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-md": ["0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0", "fontWeight": "400" }], "title-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-alabaster-card shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-4 flex items-center gap-3 bg-surface-alabaster-subtle"><img alt="SCI Industry Portal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1hiRhJR16GPCpOrWep9uBdv1f3d6EQkQn0S5EUVNRGrJTfMTkEa83lkdN5h6PUIBXryMBp6Qnr8aj6qLiY-vhSn299BvkgdEPklOgJMnjOd_HxIgMwaVNe3HKlhKMoO-AyNu6uSGOIRurAW3cwTaua7euirpn9jmWhZt5X3WIVtVx_bGD4glNDI8KfnvANFBKOeWUaBJEHElLWwsR7J82I5RtXRObwoMMTtv0FwGdkUiU-d9Jh-ecUyU"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">SCI Industry Portal</span><div class="flex items-center gap-1.5 mt-0.5"><span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded">Enterprise ATS</span></div></div></div><div class="px-3 pt-4 pb-2"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-3">Recruitment Operations</span></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="industry-dashboard" href="#"><span class="material-symbols-outlined text-[1.25rem]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="opportunities" href="#"><span class="material-symbols-outlined text-[1.25rem]">work</span><span class="font-label-md text-label-md">Opportunities</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="candidates-and-ats" href="#"><span class="material-symbols-outlined text-[1.25rem]">group</span><span class="font-label-md text-label-md">Candidates &amp; ATS</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="academic-collaborations" href="#"><span class="material-symbols-outlined text-[1.25rem]">school</span><span class="font-label-md text-label-md">Academic Collabs</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mentorship" href="#"><span class="material-symbols-outlined text-[1.25rem]">supervisor_account</span><span class="font-label-md text-label-md">Mentorship</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="talent-analytics" href="#"><span class="material-symbols-outlined text-[1.25rem]">query_stats</span><span class="font-label-md text-label-md">Talent Analytics</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messaging" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[1.25rem]">forum</span><span class="font-label-md text-label-md">Messages</span></div><span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full">4</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings-and-profile" href="#"><span class="material-symbols-outlined text-[1.25rem]">settings</span><span class="font-label-md text-label-md">Settings &amp; Profile</span></a></nav></div><div class="p-3"><div class="p-3 rounded-lg bg-surface-alabaster-subtle flex flex-col gap-2.5"><div class="flex items-start justify-between gap-2"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">Tata Consultancy &amp; Innovation Labs</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-verified-badge text-[0.875rem]">verified</span>Tier 1 Institutional Partner</span></div></div><div class="space-y-1"><div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Active Talent Quota</span><span class="font-data-mono text-data-mono font-medium text-on-surface">1,420 / 2,000</span></div><div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full w-[71%]"></div></div></div></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.25rem]">search</span><input class="w-full pl-10 pr-4 py-2 text-body-md font-body-md bg-surface-alabaster-card rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search applicants, skills, universities..." type="text"/></div><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors whitespace-nowrap font-label-md text-label-md"><span class="material-symbols-outlined text-primary text-[1.125rem]">auto_awesome</span><span>AI Skill Index</span></button></div><div class="flex items-center gap-4"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-match-low"></span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">help_outline</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Priya Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head of Campus Talent</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.06)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvc6Rjx-T9tI2u3p22ttpuhYiw8lusUVx9gB3UqsAKKcmF9_pfcOv9e7zrXWwnICfoJX2jR5ZQmVJCv_iP6OGHbSC7uFQ_E41eziODH3h23JbOvftRJxBJaRkjM0_EOv3SWZ9I14MP3XQN_rFj-mpEMz4o8yG13UZjZ3E6HSDZ8QhflYnxqgtWXcSM8R9KgJ0YgPGlZ1aDr5AwJqir3YhzCUP5RWa7K2ys4aBFXHFPFo6rucHSieFkSw"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header / Operational Toolbar Bar -->
+<div class="px-8 py-5 flex flex-col gap-4 bg-surface-alabaster-card shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 min-w-0">
+<div class="flex items-center gap-2">
+<span class="p-2 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[1.5rem]">groups</span>
+</span>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface">Applicant Tracking System</h1>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active Pipeline Management &amp; Institutional Talent Review</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<!-- Role Opportunity Switcher -->
+<div class="relative">
+<button class="flex items-center gap-2 px-3.5 py-2 bg-surface-alabaster-subtle hover:bg-surface-container rounded-lg text-left transition-colors" id="roleDropdownBtn">
+<span class="w-2 h-2 rounded-full bg-match-high"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate max-w-sm">Role: Senior AI/ML Research Intern (IIT &amp; NIT Cohort)</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded font-data-mono text-data-mono text-on-surface-variant font-medium">284 Applicants</span>
+<span class="material-symbols-outlined text-outline text-[1.125rem]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Action & View Mode Cluster -->
+<div class="flex items-center gap-3">
+<!-- View Switcher -->
+<div class="flex items-center bg-surface-alabaster-subtle p-1 rounded-xl">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-alabaster-card text-primary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]">view_kanban</span>
+<span>Kanban Board</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">table_rows</span>
+<span>Table List</span>
+</button>
+</div>
+<button class="flex items-center gap-2 px-3.5 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]">person_add</span>
+<span>Sponsor Pipeline Invite</span>
+</button>
+</div>
+</div>
+<!-- Micro Filter Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Candidate Search Input -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[1rem]">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 text-body-sm font-body-sm bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Search by name, paper, skill..." type="text"/>
+</div>
+<!-- AI Match Threshold Filter -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-alabaster-subtle rounded-lg">
+<span class="material-symbols-outlined text-primary text-[1rem]">tune</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Min Match:</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">≥ 80%</span>
+<input class="w-20 accent-primary cursor-pointer h-1.5 bg-surface-container-high rounded-lg" max="95" min="50" type="range" value="80"/>
+</div>
+<!-- Institution Multi-Select Pill -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-alabaster-subtle hover:bg-surface-container rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-outline text-[1rem]">school</span>
+<span class="font-label-sm text-label-sm text-on-surface">Institutes: IIT &amp; NIT Tier-1</span>
+<span class="material-symbols-outlined text-outline text-[0.875rem]">close</span>
+</div>
+<!-- SCI Verification Filter -->
+<button class="flex items-center gap-1 px-3 py-1.5 bg-primary/10 text-primary rounded-lg font-label-sm text-label-sm hover:bg-primary/15 transition-colors">
+<span class="material-symbols-outlined text-verified-badge text-[1rem]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>SCI Verified Only</span>
+</button>
+</div>
+<!-- Quick Metrics Pill Strip -->
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Average Match: <strong class="text-on-surface font-data-mono">87.4%</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-verified-badge"></span>
+<span>Pre-Verified Transcripts: <strong class="text-on-surface font-data-mono">92%</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-match-medium"></span>
+<span>Assessment Pass Rate: <strong class="text-on-surface font-data-mono">68%</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Board & Drawer Split Stage -->
+<div class="relative flex w-full min-h-[calc(100vh-14rem)] overflow-hidden bg-surface-container-low/40">
+<!-- Kanban Track (Scrollable Canvas) -->
+<div class="flex-1 overflow-x-auto p-6 scroll-smooth">
+<div class="flex items-start gap-4 min-w-[68rem]">
+<!-- STAGE 1: Applied (48) -->
+<div class="flex flex-col w-kanban-col-w shrink-0 bg-surface-container-low/70 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between pb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Applied</span>
+<span class="px-2 py-0.5 bg-surface-alabaster-card text-on-surface-variant rounded-full font-data-mono text-label-sm font-semibold shadow-sm">48</span>
+</div>
+<button class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[1.125rem]">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-21rem)] pr-1">
+<!-- Card 1 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Close up professional portrait photo of Tanvi Krishnan, female Indian AI student with dark hair wearing glasses in university campus lab, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14teMeLM7SE_DXqyUHCbcbjJc90Ecace85eaj83dyS8qjA-cuckP8qfzIfn_Pu-O7VddAMY5v3I1tV0JvZMjNBXpL7kTR4YlRE9oGBo4_UEaGgB3TxYuvayi-HCygrYdV8zbAEvICgz1apNjfkTDjZKtJA51JUPQJr-BIHZQbzDpQB1tEbvs7bmI17t1lQKDkb16r1Q-x7P8geEbBfD3sOuiXTb9itlSyFb8zm-fEpg5uO4-sG0pcsg"/>
+<span class="absolute -bottom-0.5 -right-0.5 bg-surface-alabaster-card rounded-full p-0.5">
+<span class="material-symbols-outlined text-verified-badge text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Tanvi Krishnan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Bombay • Dual CS '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>92%
+                </span>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-3">
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">PyTorch</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">Transformers</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">JAX</span>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant text-label-sm font-label-sm">
+<span class="flex items-center gap-1 font-data-mono"><span class="material-symbols-outlined text-[0.875rem] text-primary">terminal</span>LC 2,180</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>1d ago</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-md">
+                    AK
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Arjun Kulkarni</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">NIT Trichy • ECE '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>88%
+                </span>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-3">
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">CUDA</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">C++20</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">TensorRT</span>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant text-label-sm font-label-sm">
+<span class="flex items-center gap-1 font-data-mono"><span class="material-symbols-outlined text-[0.875rem] text-primary">code</span>48 repos</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>2d ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 2: AI Screened / Qualified (32) -->
+<div class="flex flex-col w-kanban-col-w shrink-0 bg-surface-container-low/70 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between pb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-match-high"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">AI Screened</span>
+<span class="px-2 py-0.5 bg-surface-alabaster-card text-on-surface-variant rounded-full font-data-mono text-label-sm font-semibold shadow-sm">32</span>
+</div>
+<button class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[1.125rem]">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-21rem)] pr-1">
+<!-- Active Target Selected Card (Rohan Verma) -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-md ring-2 ring-primary transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="High-resolution corporate headshot of Rohan Verma, 22 year old Indian male artificial intelligence researcher, confident smile, clean navy polo shirt, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSqa5q03U59TiwCepRV7J0MDUwLkPoP8lOshGM4uBbf7qLkbLClHfH9X31t5Qb8WCDLffgvc3Vk_vZIRgQCjSDyXkXOd9LP67q7Tg57K3BVWuiaJunLZv7vsyChqkRq2zAohCY_h89xyb95g9GnkFBL9sogTbbno2j2BmUPyjnmgc9OjoQnbqMJixf-LeJnGUM8WP0QR1zhBZAfsjBuJm-Y9mNScMN-ANxmBwnuwfHGufByXMWh1jvAQ"/>
+<span class="absolute -bottom-0.5 -right-0.5 bg-surface-alabaster-card rounded-full p-0.5">
+<span class="material-symbols-outlined text-verified-badge text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-primary truncate">Rohan Verma</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Madras • CS '25</span>
+</div>
+</div>
+<span class="bg-match-high text-on-primary font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>96%
+                </span>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-3">
+<span class="bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded text-label-sm font-label-sm">PyTorch</span>
+<span class="bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded text-label-sm font-label-sm">CUDA</span>
+<span class="bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded text-label-sm font-label-sm">Transformers</span>
+</div>
+<!-- Extra badges on high match -->
+<div class="p-2 bg-surface-alabaster-subtle rounded-lg mb-2.5 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-verified-badge text-[1rem]">verified_user</span>SCI Pre-Vetted
+                </span>
+<span class="font-data-mono text-primary font-bold">GPA 9.4</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="flex items-center gap-1 font-data-mono text-on-surface"><span class="material-symbols-outlined text-[0.875rem] text-primary">data_object</span>Top 0.5% Contest</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>3d ago</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Portrait photo of Meera Nambiar, young female graduate computer scientist in modern tech office, warm ambient lighting, elegant professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDio-3oA5ZFWLIYLK3DMMCVmuC2M9Ul1OLI0FnaHEpdzarmWDwFbxTGIlsl4Ms4PkSYGQtImjJGJU4B_x7eJ92XDSK_ItKeDrpNu2LkQEDT-cvhHb_nGY5drADqVuaYO3_4WhjAqeBqwR0Jga4Rb6iQEf_aSOk2I0uNtrHe4ISBg2ZTLwjl9H9x1ZwUNHzp02EFvPnCyjWDA342hQc4IKiIYTWssm1y-ZuHSGSuXoOkQom0CP3HQ14CmA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Meera Nambiar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Delhi • Math &amp; Comp '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>91%
+                </span>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-3">
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">Diffusion Models</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">PyTorch</span>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant text-label-sm font-label-sm">
+<span class="flex items-center gap-1 font-data-mono"><span class="material-symbols-outlined text-[0.875rem] text-verified-badge">article</span>NeurIPS '24 Sub</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>2d ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 3: Technical Assessment (18) -->
+<div class="flex flex-col w-kanban-col-w shrink-0 bg-surface-container-low/70 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between pb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-match-medium"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Technical Assessment</span>
+<span class="px-2 py-0.5 bg-surface-alabaster-card text-on-surface-variant rounded-full font-data-mono text-label-sm font-semibold shadow-sm">18</span>
+</div>
+<button class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[1.125rem]">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-21rem)] pr-1">
+<!-- Card 5 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-label-md">
+                    SS
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Siddharth Sen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Kanpur • CS '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>89%
+                </span>
+</div>
+<div class="p-2 bg-surface-container/60 rounded-lg mb-2 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Code Challenge Score</span>
+<span class="font-data-mono text-match-high font-bold">100 / 100</span>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">C++</span>
+<span class="bg-surface-alabaster-subtle text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">ONNX</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="flex items-center gap-1 text-match-high"><span class="material-symbols-outlined text-[0.875rem]">check_circle</span>Completed</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>5d ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 4: Interview Stage (9) -->
+<div class="flex flex-col w-kanban-col-w shrink-0 bg-surface-container-low/70 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between pb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-verified-badge"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Interview Stage</span>
+<span class="px-2 py-0.5 bg-surface-alabaster-card text-on-surface-variant rounded-full font-data-mono text-label-sm font-semibold shadow-sm">9</span>
+</div>
+<button class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[1.125rem]">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-21rem)] pr-1">
+<!-- Card 6 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Portrait photo of Ananya Deshmukh, young female Indian engineer wearing professional glasses, smiling warmly in academic library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCthy_J3TxuU2JCaYPRFafzIitmOBntWQ3-NhBXmRENO-eMgyu7u6ewWKLtWNSt2738tEt0kvOM1VGyut64Xei8t-fvrYXU7rcmtCuy5ADSmphJSTUkJJ8b9OVjC7JV9u2Tb08UQzCltIJKIqOiRDgo1kTIpsAnKPLfUZvZT0Qshxc25wbFnmUN5gsHuu_wB09AekMhVNMBc59I0yRia19G027Q-Qp2ba0FUfcgUKj1B13bOIUzk7GFiQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Ananya Deshmukh</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Kharagpur • AI '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>94%
+                </span>
+</div>
+<div class="p-2 bg-secondary-container/30 rounded-lg mb-2 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[0.875rem] text-primary">videocam</span>Final Panel with CTO</span>
+<span class="font-data-mono text-primary font-bold">Tomorrow 3 PM</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="text-on-surface-variant">2 rounds cleared</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>1w ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STAGE 5: Offer Extended (4) -->
+<div class="flex flex-col w-kanban-col-w shrink-0 bg-surface-container-low/70 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between pb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Offer Extended</span>
+<span class="px-2 py-0.5 bg-surface-alabaster-card text-on-surface-variant rounded-full font-data-mono text-label-sm font-semibold shadow-sm">4</span>
+</div>
+<button class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[1.125rem]">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-21rem)] pr-1">
+<!-- Card 7 -->
+<div class="bg-surface-alabaster-card p-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-label-md">
+                    PK
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors">Pranav Kapoor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">IIT Roorkee • CSE '25</span>
+</div>
+</div>
+<span class="bg-match-high/10 text-match-high font-data-mono text-label-sm font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>95%
+                </span>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg mb-2 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[0.875rem]">verified</span>Offer Package Sent</span>
+<span class="font-data-mono text-primary font-bold">Expires in 4d</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Stipend: Tier-1 Fellow</span>
+<span class="flex items-center gap-1 text-outline"><span class="material-symbols-outlined text-[0.875rem]">schedule</span>1d ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HIGH-FIDELITY CANDIDATE SLIDE-OUT DRAWER (Open State: Rohan Verma - 96% Match) -->
+<aside class="w-[420px] shrink-0 bg-surface-alabaster-card border-l-0 shadow-2xl flex flex-col justify-between z-30 transition-transform duration-300" id="candidateDrawer">
+<!-- Drawer Top Header & Quick Actions -->
+<div class="overflow-y-auto flex-1 flex flex-col">
+<div class="p-6 pb-4 bg-surface-alabaster-subtle border-b-0 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>
+              AI Recommender Score: Top 1%
+            </span>
+<div class="flex items-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">share</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">open_in_full</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors" onclick="document.getElementById('candidateDrawer').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[1.25rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Hero Candidate Identity Block -->
+<div class="flex items-start gap-3.5">
+<div class="relative">
+<img class="w-14 h-14 rounded-2xl object-cover shadow-sm" data-alt="Close up sharp professional profile photo of Rohan Verma, Indian male computer science researcher, IIT Madras, wearing charcoal collared shirt, confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9ZpM_FNEUpws12sP7kGgaqinjoMcOKBNIkJ4BIQ-4AGpIIviYgU7n81IRhikm3h12WthyiNicNfadqapDjfF7spzd9JME9L4yXIUtpuy5AZp5kUIaOtDhse_tDXybFWalGYIq2JVkQqHh6htWq145P98VinT53U9jSv13gHC7JSkrYQMyvOXu8KdHbBVMOaWjNZ1XPdYtqwsGXozTfsMJcOe3t-owiXzJaJ_rJzFk3zaB4EomEfApfA"/>
+<span class="absolute -bottom-1 -right-1 bg-surface-alabaster-card rounded-full p-0.5">
+<span class="material-symbols-outlined text-verified-badge text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Rohan Verma</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">B.Tech Computer Science • IIT Madras</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-verified-badge bg-verified-badge/10 px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.75rem]" style="font-variation-settings: 'FILL' 1;">verified</span>SCI Verified Dossier
+                </span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">Batch '25</span>
+</div>
+</div>
+</div>
+<!-- Quick Contact Meta Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[1rem] text-outline">mail</span>
+<span class="truncate">r.verma@cse.iitm.ac.in</span>
+</div>
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[1rem] text-outline">call</span>
+<span class="font-data-mono">+91 98401 22910</span>
+</div>
+</div>
+</div>
+<!-- Metric & Verification Ribbon -->
+<div class="grid grid-cols-3 gap-2 px-6 py-3.5 bg-surface-alabaster-card border-b-0 shadow-sm">
+<div class="flex flex-col p-2 rounded-lg bg-surface-alabaster-subtle">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Academic CGPA</span>
+<span class="font-display-lg text-[1.25rem] text-on-surface font-bold font-data-mono mt-0.5">9.4 <span class="text-body-sm font-normal text-outline">/10</span></span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-alabaster-subtle">
+<span class="font-label-sm text-label-sm text-on-surface-variant">LeetCode Contest</span>
+<span class="font-display-lg text-[1.25rem] text-primary font-bold font-data-mono mt-0.5">2,340</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-alabaster-subtle">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Match Rating</span>
+<span class="font-display-lg text-[1.25rem] text-match-high font-bold font-data-mono mt-0.5">96%</span>
+</div>
+</div>
+<!-- Drawer Body Tabs Content -->
+<div class="p-6 flex flex-col gap-6">
+<!-- AI Skill Radar & Competency Breakdown -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[1.125rem]">insights</span>
+                AI Skill Index &amp; Fit Analysis
+              </span>
+<span class="font-label-sm text-label-sm text-match-high font-bold">Optimal Fit</span>
+</div>
+<div class="flex flex-col gap-2.5 bg-surface-alabaster-subtle p-3.5 rounded-xl">
+<!-- Skill 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Core ML &amp; Transformer Architectures</span>
+<span class="font-data-mono text-primary font-bold">98%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[98%]"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">High Performance Python &amp; PyTorch</span>
+<span class="font-data-mono text-primary font-bold">99%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[99%]"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">System Design &amp; Model Optimization (CUDA)</span>
+<span class="font-data-mono text-primary font-bold">92%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[92%]"></div>
+</div>
+<!-- Skill 4 -->
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Technical Presentation &amp; Academic Writing</span>
+<span class="font-data-mono text-primary font-bold">90%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Academic Credential & Transcript Block -->
+<div class="flex flex-col gap-2.5">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-verified-badge text-[1.125rem]">school</span>
+              Academic Credentials
+            </span>
+<div class="p-3 bg-surface-alabaster-subtle rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-surface-alabaster-card rounded-lg shadow-sm text-primary">
+<span class="material-symbols-outlined text-[1.25rem]">description</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">IIT_Madras_Transcript_Verified.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Signed by Dean of Academic Affairs • Oct 2024</span>
+</div>
+</div>
+<button class="text-primary hover:text-primary-container p-1.5">
+<span class="material-symbols-outlined text-[1.25rem]">download</span>
+</button>
+</div>
+</div>
+<!-- Resume ATS Highlights & Verified Project Repos -->
+<div class="flex flex-col gap-2.5">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[1.125rem]">code</span>
+              Verified Projects &amp; Repositories
+            </span>
+<div class="space-y-2">
+<div class="p-3 bg-surface-alabaster-subtle rounded-xl flex flex-col gap-1.5 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+                    github.com/rohan-v/flash-attn-sublinear
+                    <span class="material-symbols-outlined text-[0.875rem]">north_east</span>
+</span>
+<span class="text-label-sm font-data-mono text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[0.875rem] text-match-medium">star</span>642
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Novel sub-linear memory attention implementation for LLM context expansion using Triton &amp; custom CUDA kernels. Benchmarked on A100 GPUs.
+                </p>
+</div>
+<div class="p-3 bg-surface-alabaster-subtle rounded-xl flex flex-col gap-1.5 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+                    github.com/rohan-v/distill-quant-engine
+                    <span class="material-symbols-outlined text-[0.875rem]">north_east</span>
+</span>
+<span class="text-label-sm font-data-mono text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[0.875rem] text-match-medium">star</span>318
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  4-bit dynamic quantizer toolkit for edge deployment of Llama 3 models on embedded devices.
+                </p>
+</div>
+</div>
+</div>
+<!-- Recruiter Evaluation Notes -->
+<div class="flex flex-col gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[1.125rem]">edit_note</span>
+              Recruiter Evaluation Log
+            </span>
+<div class="p-3 bg-surface-alabaster-subtle rounded-xl text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Priya Sharma • Lead Campus Recruiter</span>
+<span class="text-label-sm font-data-mono text-outline">Yesterday</span>
+</div>
+<p class="leading-relaxed">
+                "Outstanding mathematical depth in ML foundations. Ranked in top 3 applicants from the IIT Joint Cohort. Passed AI preliminary screener with zero flags."
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Recruiter Action Bar in Drawer Footer -->
+<div class="p-4 bg-surface-alabaster-card border-t-0 shadow-[0_-4px_16px_rgba(0,0,0,0.03)] flex flex-col gap-2.5">
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]">arrow_forward</span>
+<span>Advance to Interview</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-surface-alabaster-subtle text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">calendar_today</span>
+<span>Schedule 1:1</span>
+</button>
+</div>
+<div class="flex items-center justify-between gap-2">
+<button class="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-alabaster-subtle font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[1rem]">note_add</span>
+<span>Leave Note</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<button class="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-error hover:bg-error-container/30 font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[1rem]">cancel</span>
+<span>Reject with Feedback</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

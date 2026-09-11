@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#7dd6c3", "on-primary-container": "#a4feea", "surface": "#faf8ff", "on-tertiary-fixed": "#2a1700", "surface-tint": "#006b5c", "surface-alabaster-card": "#FFFFFF", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#ffffff", "surface-obsidian": "#090D14", "primary-fixed": "#99f3df", "inverse-surface": "#283044", "border-alabaster-strong": "#CBD5E1", "on-error": "#ffffff", "surface-variant": "#dae2fd", "match-medium": "#F59E0B", "surface-bright": "#faf8ff", "on-primary-fixed": "#00201b", "surface-container-low": "#f2f3ff", "secondary-fixed": "#d8e3fb", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "surface-container": "#eaedff", "primary-fixed-dim": "#7dd6c3", "on-primary": "#ffffff", "surface-obsidian-subtle": "#1E293B", "on-secondary": "#ffffff", "primary": "#005e51", "border-obsidian": "#1E293B", "outline-variant": "#bdc9c5", "on-tertiary-container": "#ffead5", "border-alabaster": "#E2E8F0", "teal-glow": "rgba(14, 121, 105, 0.15)", "surface-alabaster-subtle": "#F1F5F9", "tertiary": "#764900", "on-secondary-container": "#586377", "on-primary-fixed-variant": "#005045", "on-surface": "#131b2e", "surface-alabaster": "#F8FAFC", "verified-badge": "#0284C7", "on-background": "#131b2e", "border-obsidian-strong": "#334155", "secondary-container": "#d5e0f8", "match-high": "#0E7969", "outline": "#6e7a76", "tertiary-fixed": "#ffddb8", "surface-obsidian-card": "#0F172A", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#3c475a", "error": "#ba1a1a", "on-secondary-fixed": "#111c2d", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "primary-container": "#0e7969", "match-low": "#E11D48", "on-error-container": "#93000a", "on-surface-variant": "#3e4946", "secondary-fixed-dim": "#bcc7de", "surface-dim": "#d2d9f4", "tertiary-container": "#975f00", "secondary": "#545f73", "background": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gap-dashboard": "1.25rem", "sidebar-width": "16rem", "cell-pad-y": "0.625rem", "drawer-width-lg": "40rem", "kanban-col-w": "18.5rem", "drawer-width": "30rem", "gutter-table": "0.75rem", "pad-card": "1.25rem", "cell-pad-x": "1rem", "sidebar-collapsed": "4.5rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "data-mono": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "title-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"] }, "fontSize": { "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "data-mono": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-md": ["0.8125rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0", "fontWeight": "400" }], "title-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-32 bg-surface-alabaster-card shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col"><div class="h-16 px-6 flex items-center justify-between border-b border-border-alabaster"><div class="flex items-center gap-6"><div class="flex items-center gap-3"><img alt="SCI Industry Portal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1hiRhJR16GPCpOrWep9uBdv1f3d6EQkQn0S5EUVNRGrJTfMTkEa83lkdN5h6PUIBXryMBp6Qnr8aj6qLiY-vhSn299BvkgdEPklOgJMnjOd_HxIgMwaVNe3HKlhKMoO-AyNu6uSGOIRurAW3cwTaua7euirpn9jmWhZt5X3WIVtVx_bGD4glNDI8KfnvANFBKOeWUaBJEHElLWwsR7J82I5RtXRObwoMMTtv0FwGdkUiU-d9Jh-ecUyU"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">SCI Industry Portal</span><div class="flex items-center gap-1.5 mt-0.5"><span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-1.5 py-0.2 rounded">Enterprise ATS</span></div></div></div><div class="hidden xl:flex items-center gap-2 pl-3 border-l border-border-alabaster"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-verified-badge text-[1rem]">verified</span><span class="font-medium text-on-surface">Tata Consultancy &amp; Innovation Labs</span><span class="text-outline font-normal">(Tier 1 Partner)</span></span></div></div><div class="flex-1 max-w-lg mx-6"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[1.25rem]">search</span><input class="w-full pl-10 pr-28 py-2 text-body-md font-body-md bg-surface-alabaster-subtle rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" placeholder="Search applicants, skills, universities..." type="text"/><button class="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1 px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm"><span class="material-symbols-outlined text-primary text-[1rem]">auto_awesome</span><span>AI Index</span></button></div></div><div class="flex items-center gap-3.5"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-match-low"></span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[1.375rem]">help_outline</span></button><div class="h-6 w-px bg-border-alabaster"></div><a class="flex items-center gap-3 pl-1 py-1 pr-2 rounded-lg hover:bg-surface-container transition-colors" data-path="settings-and-profile" href="#"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Priya Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head of Campus Talent</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.06)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvc6Rjx-T9tI2u3p22ttpuhYiw8lusUVx9gB3UqsAKKcmF9_pfcOv9e7zrXWwnICfoJX2jR5ZQmVJCv_iP6OGHbSC7uFQ_E41eziODH3h23JbOvftRJxBJaRkjM0_EOv3SWZ9I14MP3XQN_rFj-mpEMz4o8yG13UZjZ3E6HSDZ8QhflYnxqgtWXcSM8R9KgJ0YgPGlZ1aDr5AwJqir3YhzCUP5RWa7K2ys4aBFXHFPFo6rucHSieFkSw"/><span class="material-symbols-outlined text-outline text-[1.125rem]">expand_more</span></a></div></div><div class="h-16 px-6 bg-surface-alabaster-card flex items-center justify-between shadow-[0_1px_3px_rgba(0,0,0,0.02)]"><nav class="flex items-center gap-1 h-full" data-active-classes="text-primary border-primary font-semibold"><a class="h-full flex items-center px-4 text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors font-label-md text-label-md" data-path="industry-dashboard" href="#">Dashboard</a><div class="relative group h-full flex items-center"><button class="h-full flex items-center gap-1.5 px-4 text-on-surface-variant hover:text-on-surface border-b-2 border-transparent group-hover:border-primary group-hover:text-primary transition-colors font-label-md text-label-md"><span>Recruitment</span><span class="material-symbols-outlined text-[1rem] group-hover:rotate-180 transition-transform duration-200">expand_more</span></button><div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 w-72 shadow-xl"><div class="bg-surface-alabaster-card rounded-xl p-3 border border-border-alabaster shadow-lg flex flex-col gap-1"><div class="px-3 py-1.5 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Recruitment Operations</div><a aria-current="page" class="flex flex-col px-3 py-2 rounded-lg hover:bg-surface-container transition-colors text-primary border-primary font-semibold" data-path="opportunities" href="#"><span class="font-label-md text-label-md text-on-surface">Opportunities &amp; Postings</span><span class="font-body-sm text-body-sm text-on-surface-variant">Manage campus roles &amp; hiring targets</span></a><a class="flex flex-col px-3 py-2 rounded-lg hover:bg-surface-container transition-colors text-left" data-path="candidates-and-ats" href="#"><span class="font-label-md text-label-md text-on-surface">Candidates &amp; ATS Pipeline</span><span class="font-body-sm text-body-sm text-on-surface-variant">Multi-stage applicant evaluation</span></a><a class="flex flex-col px-3 py-2 rounded-lg hover:bg-surface-container transition-colors text-left" data-path="talent-analytics" href="#"><span class="font-label-md text-label-md text-on-surface">Talent Analytics &amp; Insights</span><span class="font-body-sm text-body-sm text-on-surface-variant">Skill density, cohort heatmaps, ROI</span></a></div></div></div><div class="relative group h-full flex items-center"><button class="h-full flex items-center gap-1.5 px-4 text-on-surface-variant hover:text-on-surface border-b-2 border-transparent group-hover:border-primary group-hover:text-primary transition-colors font-label-md text-label-md"><span>Ecosystem</span><span class="material-symbols-outlined text-[1rem] group-hover:rotate-180 transition-transform duration-200">expand_more</span></button><div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 w-72 shadow-xl"><div class="bg-surface-alabaster-card rounded-xl p-3 border border-border-alabaster shadow-lg flex flex-col gap-1"><div class="px-3 py-1.5 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Academic Ecosystem</div><a class="flex flex-col px-3 py-2 rounded-lg hover:bg-surface-container transition-colors text-left" data-path="academic-collaborations" href="#"><span class="font-label-md text-label-md text-on-surface">Academic Collaborations</span><span class="font-body-sm text-body-sm text-on-surface-variant">Joint labs, R&amp;D grants, faculty connects</span></a><a class="flex flex-col px-3 py-2 rounded-lg hover:bg-surface-container transition-colors text-left" data-path="mentorship" href="#"><span class="font-label-md text-label-md text-on-surface">Mentorship Network</span><span class="font-body-sm text-body-sm text-on-surface-variant">Industry mentors and cohort sessions</span></a></div></div></div><a class="h-full flex items-center gap-2 px-4 text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors font-label-md text-label-md" data-path="messaging" href="#"><span>Messages</span><span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full">4</span></a><a class="h-full flex items-center px-4 text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors font-label-md text-label-md" data-path="settings-and-profile" href="#">Settings &amp; Profile</a></nav><div class="flex items-center gap-4"><div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant bg-surface-alabaster-subtle px-3 py-1.5 rounded-lg"><span class="text-on-surface-variant">Talent Quota:</span><span class="font-data-mono text-data-mono font-semibold text-primary">1,420 / 2,000</span><div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden ml-1.5"><div class="h-full bg-primary-container rounded-full w-[71%]"></div></div></div></div></div></header><main class="w-full pt-32 bg-surface"><div class="flex flex-col w-full">
+<!-- Dynamic Top Ambient Accent -->
+<div class="relative w-full overflow-hidden bg-surface-container-low px-8 pt-8 pb-10 shadow-sm">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-fixed opacity-30 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 top-0 w-80 h-80 rounded-full bg-teal-glow blur-2xl pointer-events-none"></div>
+<!-- Header Section -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6">
+<div class="flex flex-col max-w-2xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[0.875rem]">hub</span>
+            Institutional Network
+          </span>
+<span class="font-data-mono text-data-mono text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high animate-pulse"></span>
+            SYNCED WITH NIRF &amp; ABET DATABASES
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+          Opportunities &amp; Job Postings <span class="font-body-lg text-body-lg text-primary font-semibold">(450+ Universities Live)</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Create, track, and optimize AI-matched campus listings across 450+ partnered tier-1 and accredited technical institutions.
+        </p>
+</div>
+<div class="flex items-center gap-3 self-start md:self-auto">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-alabaster-card text-on-surface hover:bg-surface-container transition-all shadow-sm font-label-md text-label-md group" id="matchingBtn">
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">tune</span>
+<span>Matching Criteria</span>
+<span class="bg-surface-container-high text-on-surface-variant font-data-mono text-data-mono px-1.5 py-0.5 rounded ml-1">v3.4</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-all shadow-md font-label-md text-label-md">
+<span class="material-symbols-outlined text-[1.25rem]">add_circle</span>
+<span>+ Create New Posting</span>
+</button>
+</div>
+</div>
+<!-- Banner: SCI Engine Weighting Model Active -->
+<div class="relative z-10 w-full rounded-2xl bg-surface-alabaster-card p-4 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[1.5rem]">neurology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">SCI Engine Weighting Model Active</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+              Live Calibrated
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Composite neural matching vectors calculated daily against real-time academic transcripts &amp; verified project commits.
+          </span>
+</div>
+</div>
+<!-- Weight Chips -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface">Technical Skills</span>
+<span class="font-data-mono text-data-mono font-bold text-primary">40%</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-verified-badge"></span>
+<span class="font-label-md text-label-md text-on-surface">Verified Repos</span>
+<span class="font-data-mono text-data-mono font-bold text-verified-badge">30%</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-match-medium"></span>
+<span class="font-label-md text-label-md text-on-surface">Academic Standing</span>
+<span class="font-data-mono text-data-mono font-bold text-match-medium">20%</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface">Hackathons</span>
+<span class="font-data-mono text-data-mono font-bold text-secondary">10%</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">settings</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Work Canvas -->
+<div class="px-8 -mt-5 flex flex-col gap-6 pb-16">
+<!-- Summary Metric Cards (4 Bento style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-20">
+<!-- Card 1 -->
+<div class="rounded-2xl bg-surface-alabaster-card p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Active Openings</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary">All Cohorts</span>
+</div>
+<div class="flex items-baseline justify-between mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">24</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-match-high">
+<span class="material-symbols-outlined text-[1rem]">arrow_upward</span>
+<span>+4 this week</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-on-surface-variant">
+<span class="font-body-sm text-body-sm">14 Full-time • 8 Intern • 2 Fellowships</span>
+<!-- Inline Sparkline SVG -->
+<svg class="w-16 h-5 text-match-high" fill="none" viewbox="0 0 64 20">
+<path d="M1 17L12 14L24 16L36 8L48 11L63 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl bg-surface-alabaster-card p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">AI Qualified Matches</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[0.875rem]">auto_awesome</span>
+            92% avg score
+          </span>
+</div>
+<div class="flex items-baseline justify-between mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-data-mono">1,842</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-match-high">
+<span class="material-symbols-outlined text-[1rem]">trending_up</span>
+<span>+18.4% MoM</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[92%]"></div>
+</div>
+<span class="font-data-mono text-data-mono text-primary font-semibold">92%</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-2xl bg-surface-alabaster-card p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Applicant Volume</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">450 Campuses</span>
+</div>
+<div class="flex items-baseline justify-between mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-data-mono">3,618</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-match-high">
+<span class="material-symbols-outlined text-[1rem]">verified</span>
+<span>99.2% verified</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-on-surface-variant">
+<span class="font-body-sm text-body-sm">Avg. 150.7 apps per opening</span>
+<svg class="w-16 h-5 text-primary" fill="none" viewbox="0 0 64 20">
+<path d="M1 18L15 15L28 11L42 13L52 6L63 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="rounded-2xl bg-surface-alabaster-card p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Offers Accepted</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-data-mono">Target: 110</span>
+</div>
+<div class="flex items-baseline justify-between mt-3">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold font-data-mono">88</span>
+<span class="font-title-sm text-title-sm text-on-surface-variant">/ 110</span>
+</div>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-match-high/10 text-match-high font-semibold">80% Yield</span>
+</div>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-match-high h-full rounded-full w-[80%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">22 pending</span>
+</div>
+</div>
+</div>
+<!-- Controls Bar -->
+<div class="rounded-2xl bg-surface-alabaster-card p-4 shadow-sm flex flex-col gap-4">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Search & Filter Pills -->
+<div class="flex flex-wrap items-center gap-3 flex-1">
+<!-- Search input -->
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.15rem]">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-body-md font-body-md bg-surface-alabaster-subtle rounded-xl text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Filter roles, code, keywords..." type="text"/>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center bg-surface-alabaster-subtle p-1 rounded-xl gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-alabaster-card text-on-surface font-label-md text-label-md shadow-sm transition-all">
+              All Postings <span class="ml-1 text-primary font-data-mono font-bold">24</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+              Full-Time <span class="ml-1 text-outline font-data-mono">14</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+              Internships <span class="ml-1 text-outline font-data-mono">8</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+              Joint Research <span class="ml-1 text-outline font-data-mono">2</span>
+</button>
+</div>
+</div>
+<!-- Dropdowns & Batch Actions -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Status Dropdown -->
+<div class="relative">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-alabaster-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1.125rem] text-outline">tune</span>
+<span>Status: <strong class="font-semibold text-primary">All Active</strong></span>
+<span class="material-symbols-outlined text-[1rem] text-outline">expand_more</span>
+</button>
+</div>
+<!-- Campuses Dropdown -->
+<div class="relative">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-alabaster-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[1.125rem] text-outline">account_balance</span>
+<span>Campuses: <strong class="font-semibold">Tier-1 &amp; IITs</strong></span>
+<span class="material-symbols-outlined text-[1rem] text-outline">expand_more</span>
+</button>
+</div>
+<div class="h-6 w-px bg-surface-container-high hidden sm:block mx-1"></div>
+<!-- Batch Action Buttons -->
+<button class="p-2 rounded-xl bg-surface-alabaster-subtle hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Export Filtered Rows">
+<span class="material-symbols-outlined text-[1.25rem]">download</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-alabaster-subtle hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Pause Selected Listings">
+<span class="material-symbols-outlined text-[1.25rem]">pause_circle</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[1.125rem]">bolt</span>
+<span>Boost on SCI Feeds</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Wide Data Table -->
+<div class="rounded-2xl bg-surface-alabaster-card shadow-sm overflow-hidden">
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-alabaster-subtle text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-5 w-12 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold min-w-[240px]">Opportunity &amp; Role</th>
+<th class="py-3.5 px-4 font-semibold min-w-[180px]">Department &amp; Work Mode</th>
+<th class="py-3.5 px-4 font-semibold min-w-[170px]">AI Candidate Matches</th>
+<th class="py-3.5 px-4 font-semibold min-w-[200px]">Applications Progress</th>
+<th class="py-3.5 px-4 font-semibold w-32">Status</th>
+<th class="py-3.5 px-4 font-semibold min-w-[140px]">Closing Timeline</th>
+<th class="py-3.5 px-5 text-right w-24">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-body-md font-body-md">
+<!-- Row 1: Autonomous Systems Intern -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Autonomous Systems Intern
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        INT-2025-04
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-verified-badge">
+<span class="material-symbols-outlined text-[0.9rem]">school</span>
+                        Tier 1 Tech Campuses
+                      </span>
+<span>•</span>
+<span>Stipend: ₹75K/mo</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Robotics &amp; Perception</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">domain</span>
+                    Hybrid (Bengaluru R&amp;D)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">324 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    96% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">488 applicants</span>
+<span class="text-on-surface-variant">Target: 300</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-high">162% of quota reached</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-match-high/10 text-match-high font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high"></span>
+                  Published
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">12 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes Apr 30, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Staff Foundation Model Scientist -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">psychology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Staff Foundation Model Scientist
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        PHD-2025-01
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-verified-badge">
+<span class="material-symbols-outlined text-[0.9rem]">verified</span>
+                        PhD &amp; Dual-Degree Exclusive
+                      </span>
+<span>•</span>
+<span>₹48L - ₹65L CTC</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Applied AI &amp; LLMs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">location_on</span>
+                    On-Site (Hyderabad Center)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">68 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    98% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">92 applicants</span>
+<span class="text-on-surface-variant">Target: 40</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-high">Exceeded screening threshold</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-match-high/10 text-match-high font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high"></span>
+                  Published
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">5 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes Apr 23, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Quantum Cryptography Research Fellow -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">vpn_key</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Quantum Cryptography Research Fellow
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        RES-2025-08
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[0.9rem]">biotech</span>
+                        Joint Academic Grant
+                      </span>
+<span>•</span>
+<span>IISc &amp; IIT-M Cohort</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Cybersecurity &amp; Hardware</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">cottage</span>
+                    Remote / Lab-Access
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">42 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-match-medium/15 text-match-medium font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    84% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">54 applicants</span>
+<span class="text-on-surface-variant">Target: 60</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 90%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">90% of target (6 left)</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Active Grant
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">18 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes May 05, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Associate Cloud Architect -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">cloud</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Associate Cloud Architect
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        FT-2025-11
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-on-surface-variant">All B.Tech / M.Tech</span>
+<span>•</span>
+<span>₹22L - ₹28L CTC</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Enterprise Cloud &amp; Infra</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">domain</span>
+                    Hybrid (Pune / Noida)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">512 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    94% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">820 applicants</span>
+<span class="text-on-surface-variant">Target: 500</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-high">Capacity achieved (Interviewing)</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-match-high/10 text-match-high font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high"></span>
+                  Published
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">8 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes Apr 26, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Product Design Specialist -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">palette</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Product Design Specialist
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        FT-2025-14
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-verified-badge">NID / IDC IIT-B Preferred</span>
+<span>•</span>
+<span>₹18L - ₹24L CTC</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Design Systems &amp; UX</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">cottage</span>
+                    Remote First (India)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">190 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    91% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">245 applicants</span>
+<span class="text-on-surface-variant">Target: 300</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-match-medium h-full rounded-full" style="width: 81%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-medium">81% of target filled</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-match-high/10 text-match-high font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high"></span>
+                  Published
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">21 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes May 08, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Data Engineer -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">database</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Data Engineer
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        FT-2025-06
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>B.Tech CSE / IT / ECE</span>
+<span>•</span>
+<span>₹16L - ₹20L CTC</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Big Data &amp; Pipelines</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">domain</span>
+                    Hybrid (Mumbai / Chennai)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">412 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    89% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">610 applicants</span>
+<span class="text-on-surface-variant">Target: 400</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-high">Target exceeded (152%)</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-match-high/10 text-match-high font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-high"></span>
+                  Published
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">15 Days Left</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Closes May 02, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Embedded Firmware Graduate Trainee -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5 text-center">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[1.25rem]">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<a class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-semibold hover:underline" href="#">
+                        Embedded Firmware Graduate Trainee
+                      </a>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-secondary">
+                        GET-2025-02
+                      </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>ECE / EEE / Embedded Systems</span>
+<span>•</span>
+<span>₹12L - ₹15L CTC</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">IoT &amp; Silicon Systems</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[0.875rem]">domain</span>
+                    On-Site (Bengaluru Hardware Lab)
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono font-bold text-on-surface">296 candidates</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-max">
+<span class="material-symbols-outlined text-[0.8rem]">auto_awesome</span>
+                    93% top match
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-data-mono">809 applicants</span>
+<span class="text-on-surface-variant">Target: 400</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-match-high">202% of target reached</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Reviewing Early
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">3 Days Left</span>
+<span class="font-body-sm text-body-sm text-match-low font-semibold">Closes Apr 21, 2025</span>
+</div>
+</td>
+<td class="py-4 px-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View Pipeline">
+<span class="material-symbols-outlined text-[1.25rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="More Actions">
+<span class="material-symbols-outlined text-[1.25rem]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar at Bottom -->
+<div class="px-6 py-4 bg-surface-alabaster-card flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Showing <strong class="text-on-surface font-semibold">1 - 7</strong> of <strong class="text-on-surface font-semibold">24</strong> campus postings
+          </span>
+<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span>Rows per page:</span>
+<select class="bg-surface-alabaster-subtle rounded px-2 py-1 text-on-surface font-data-mono focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container disabled:opacity-40 transition-colors" disabled="">
+<span class="material-symbols-outlined text-[1.25rem]">first_page</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container disabled:opacity-40 transition-colors" disabled="">
+<span class="material-symbols-outlined text-[1.25rem]">chevron_left</span>
+</button>
+<div class="flex items-center px-1">
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-data-mono text-data-mono font-semibold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-data-mono text-data-mono transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-data-mono text-data-mono transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-data-mono text-data-mono transition-colors">4</button>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></body></html>
